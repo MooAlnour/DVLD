@@ -24,13 +24,12 @@ namespace DVLD.People
 
         private void _AddNewPerson()
         {
-            frmAddEditPersonInfo frmAddEditPersonInfo = new frmAddEditPersonInfo();
-            frmAddEditPersonInfo.ShowDialog();
+            Form1 form1 = new Form1(-1);
+            form1.ShowDialog();
         }
         private void frmManagePeople_Load(object sender, EventArgs e)
         {
             _RefreshPeopleList();
-            comboBox1.DisplayMember = "ID";
 
         }
 
@@ -63,6 +62,39 @@ namespace DVLD.People
         private void addNewPersonToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _AddNewPerson();
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dgvAllPeople.CurrentRow != null)
+            {
+                int personID = Convert.ToInt32(dgvAllPeople.CurrentRow.Cells[0].Value);
+                Form1 form1 = new Form1(personID);
+                form1.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Please select a row first.");
+            }
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to delete Person [" + dgvAllPeople.CurrentRow.Cells[0].Value + "]", "Confirm Delete", MessageBoxButtons.OKCancel) == DialogResult.OK)
+
+            {
+
+                //Perform Delele and refresh
+                if (clsPerson.DeletePerson((int)dgvAllPeople.CurrentRow.Cells[0].Value))
+                {
+                    MessageBox.Show("Person Deleted Successfully.");
+                    _RefreshPeopleList();
+                }
+
+                else
+                    MessageBox.Show("Person is not deleted.");
+
+            }
         }
     }
 }

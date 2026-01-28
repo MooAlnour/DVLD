@@ -52,11 +52,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="People\frmAddEditPersonInfo.cs">
+    <Compile Include="People\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="People\frmAddEditPersonInfo.Designer.cs">
-      <DependentUpon>frmAddEditPersonInfo.cs</DependentUpon>
+    <Compile Include="People\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="People\frmManagePeople.cs">
       <SubType>Form</SubType>
@@ -64,10 +64,10 @@
     <Compile Include="People\frmManagePeople.Designer.cs">
       <DependentUpon>frmManagePeople.cs</DependentUpon>
     </Compile>
-    <Compile Include="People\ucAddEditPersonInfo.cs">
+    <Compile Include="People\Controls\ucAddEditPersonInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="People\ucAddEditPersonInfo.Designer.cs">
+    <Compile Include="People\Controls\ucAddEditPersonInfo.Designer.cs">
       <DependentUpon>ucAddEditPersonInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -75,13 +75,13 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="People\frmAddEditPersonInfo.resx">
-      <DependentUpon>frmAddEditPersonInfo.cs</DependentUpon>
+    <EmbeddedResource Include="People\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="People\frmManagePeople.resx">
       <DependentUpon>frmManagePeople.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="People\ucAddEditPersonInfo.resx">
+    <EmbeddedResource Include="People\Controls\ucAddEditPersonInfo.resx">
       <DependentUpon>ucAddEditPersonInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -188,5 +188,6 @@
   <ItemGroup>
     <None Include="Resources\Number 32.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

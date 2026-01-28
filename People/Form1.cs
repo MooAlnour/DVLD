@@ -10,14 +10,16 @@ using System.Windows.Forms;
 
 namespace DVLD.People
 {
-    public partial class frmAddEditPersonInfo: Form
+    public partial class Form1: Form
     {
-        public frmAddEditPersonInfo()
+        public Form1(int PersonID)
         {
             InitializeComponent();
+            ucAddEditPersonInfo1._PersonID = PersonID;
+
         }
 
-        private void AddEditPersonInfo_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }

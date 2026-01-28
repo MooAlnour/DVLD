@@ -70,12 +70,12 @@
             this.dgvAllPeople.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvAllPeople.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAllPeople.ContextMenuStrip = this.contextMenuStrip1;
-            this.dgvAllPeople.Location = new System.Drawing.Point(12, 331);
+            this.dgvAllPeople.Location = new System.Drawing.Point(12, 314);
             this.dgvAllPeople.Name = "dgvAllPeople";
             this.dgvAllPeople.ReadOnly = true;
             this.dgvAllPeople.RowHeadersWidth = 51;
             this.dgvAllPeople.RowTemplate.Height = 24;
-            this.dgvAllPeople.Size = new System.Drawing.Size(1344, 129);
+            this.dgvAllPeople.Size = new System.Drawing.Size(1344, 146);
             this.dgvAllPeople.TabIndex = 4;
             // 
             // contextMenuStrip1
@@ -90,7 +90,7 @@
             this.sendEmailToolStripMenuItem,
             this.phToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(242, 266);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(242, 238);
             // 
             // toolStripMenuItem2
             // 
@@ -130,7 +130,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(273, 289);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(170, 22);
+            this.textBox1.Size = new System.Drawing.Size(179, 22);
             this.textBox1.TabIndex = 9;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -173,6 +173,7 @@
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(241, 38);
             this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
@@ -182,6 +183,7 @@
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             this.deleteToolStripMenuItem.Size = new System.Drawing.Size(241, 38);
             this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // sendEmailToolStripMenuItem
             // 
