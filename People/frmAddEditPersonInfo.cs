@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -201,6 +202,22 @@ namespace DVLD.People
 
             if (_Mode == enMode.Update)
                 _LoadData();
+        }
+
+        private void rbMale_CheckedChanged(object sender, EventArgs e)
+        {
+            if (pbPersonImage.ImageLocation==null)
+            {
+                pbPersonImage.Image = Resources.Male_512;
+            }
+        }
+
+        private void rbFemale_CheckedChanged(object sender, EventArgs e)
+        {
+            if (pbPersonImage.ImageLocation == null)
+            {
+                pbPersonImage.Image = Resources.Female_512;
+            }
         }
     }
 }

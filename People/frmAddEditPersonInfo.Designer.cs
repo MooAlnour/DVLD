@@ -199,6 +199,7 @@
             // pbPersonImage
             // 
             this.pbPersonImage.ErrorImage = null;
+            this.pbPersonImage.Image = global::DVLD.Properties.Resources.Male_512;
             this.pbPersonImage.Location = new System.Drawing.Point(849, 99);
             this.pbPersonImage.Name = "pbPersonImage";
             this.pbPersonImage.Size = new System.Drawing.Size(204, 201);
@@ -316,13 +317,14 @@
             this.rbFemale.Name = "rbFemale";
             this.rbFemale.Size = new System.Drawing.Size(116, 33);
             this.rbFemale.TabIndex = 1;
-            this.rbFemale.TabStop = true;
             this.rbFemale.Text = "Female";
             this.rbFemale.UseVisualStyleBackColor = true;
+            this.rbFemale.CheckedChanged += new System.EventHandler(this.rbFemale_CheckedChanged);
             // 
             // rbMale
             // 
             this.rbMale.AutoSize = true;
+            this.rbMale.Checked = true;
             this.rbMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbMale.Location = new System.Drawing.Point(178, 167);
             this.rbMale.Name = "rbMale";
@@ -331,6 +333,7 @@
             this.rbMale.TabStop = true;
             this.rbMale.Text = "Male";
             this.rbMale.UseVisualStyleBackColor = true;
+            this.rbMale.CheckedChanged += new System.EventHandler(this.rbMale_CheckedChanged);
             // 
             // cbCountry
             // 
