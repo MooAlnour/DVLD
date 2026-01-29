@@ -24,8 +24,8 @@ namespace DVLD.People
 
         private void _AddNewPerson()
         {
-            Form1 form1 = new Form1(-1);
-            form1.ShowDialog();
+            frmAddEditPersonInfo frmAddEditPersonInfo = new frmAddEditPersonInfo();
+            frmAddEditPersonInfo.ShowDialog();
         }
         private void frmManagePeople_Load(object sender, EventArgs e)
         {
@@ -69,8 +69,9 @@ namespace DVLD.People
             if (dgvAllPeople.CurrentRow != null)
             {
                 int personID = Convert.ToInt32(dgvAllPeople.CurrentRow.Cells[0].Value);
-                Form1 form1 = new Form1(personID);
-                form1.ShowDialog();
+                frmAddEditPersonInfo frmAddEditPersonInfo = new frmAddEditPersonInfo(personID);
+                frmAddEditPersonInfo.ShowDialog();
+
             }
             else
             {

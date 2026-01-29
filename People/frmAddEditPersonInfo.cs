@@ -1,33 +1,40 @@
-﻿using System;
+﻿using DVLD.Business;
+using DVLD.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DVLD.Business;
-using System.Diagnostics.Contracts;
 
 namespace DVLD.People
 {
-    public partial class ucAddEditPersonInfo: UserControl
+    public partial class frmAddEditPersonInfo : Form
     {
         public enum enMode { AddNew = 0, Update = 1 };
         private enMode _Mode;
 
-        public event EventHandler CloseRequested;
+     
+        private int _PersonID = -1;
 
+         clsPerson _Person;
 
-        public int _PersonID { get; set; }
-        clsPerson _Person;
-
-        
-        public ucAddEditPersonInfo()
+        public frmAddEditPersonInfo()
         {
             InitializeComponent();
+            _Mode = enMode.AddNew;
         }
+
+        public frmAddEditPersonInfo(int PersonID)
+        {
+            InitializeComponent();
+            _Mode = enMode.Update;
+            _PersonID = PersonID;
+        }
+
         private void _FillCountriesInComoboBox()
         {
             DataTable dtCountries = clsCountry.GetAllCountries();
@@ -40,29 +47,58 @@ namespace DVLD.People
             }
         }
 
-        private void _LoadData()
+
+        private void _ResetDefualtValues()
         {
             _FillCountriesInComoboBox();
-            cbCountry.SelectedIndex = 0;
 
-            if (_PersonID == -1)
+            if (_Mode == enMode.AddNew)
             {
-                _Mode = enMode.AddNew;
                 lblMode.Text = "Add New Person";
                 _Person = new clsPerson();
-                return;
             }
+            else
+                lblMode.Text = "Update Person";
 
-            _Mode = enMode.Update;
+            if (rbFemale.Checked)
+            
+                pbPersonImage.Image = Resources.Female_512;
+            else
+                pbPersonImage.Image = Resources.Male_512;
+
+            llRemoveImage.Visible = (pbPersonImage.ImageLocation != null);
+
+            dtpDateOfBirth.MaxDate = DateTime.Now.AddYears(-18);
+            dtpDateOfBirth.Value = dtpDateOfBirth.MaxDate;
+            dtpDateOfBirth.MinDate = DateTime.Now.AddYears(-100);
+
+            cbCountry.SelectedIndex = cbCountry.FindString("Sudan");
+
+            txtFirstName.Text = "";
+            txtSecondName.Text = "";
+            txtThirdName.Text = "";
+            txtLastName.Text = "";
+            txtNationalNo.Text = "";
+            txtEmail.Text = "";
+            txtAddress.Text = "";
+            txtPhone.Text = "";
+            rbMale.Checked = true;
+        }
+
+
+        private void _LoadData()
+        {
+
             _Person = clsPerson.Find(_PersonID);
-            if (_Person==null)
+
+         
+            if (_Person == null)
             {
                 MessageBox.Show("This form will be closed because No Person with ID = " + _PersonID);
-                //this.Close();
-
+                this.Close();
                 return;
             }
-            lblMode.Text = "Edit Person ID = " + _PersonID;
+            lblMode.Text = "Edit Person ID = " + _PersonID.ToString();
             lblPersonID.Text = _PersonID.ToString();
             txtFirstName.Text = _Person.FirstName;
             txtSecondName.Text = _Person.SecondName;
@@ -73,15 +109,18 @@ namespace DVLD.People
             txtAddress.Text = _Person.Address;
             txtPhone.Text = _Person.Phone;
             dtpDateOfBirth.Value = _Person.DateOfBirth;
-            if (rbFemale.Checked)
+
+            if (_Person.Gendor == 0)
             {
-                _Person.Gendor = 1;
+                rbMale.Checked = true;
             }
             else
-                _Person.Gendor = 0;
+                rbFemale.Checked = true;
+
+
             if (_Person.ImagePath != "")
             {
-                pictureBox3.Load(_Person.ImagePath);
+                pbPersonImage.ImageLocation = _Person.ImagePath;
             }
 
             llRemoveImage.Visible = (_Person.ImagePath != "");
@@ -102,30 +141,15 @@ namespace DVLD.People
                 string selectedFilePath = openFileDialog1.FileName;
                 //MessageBox.Show("Selected Image is:" + selectedFilePath);
 
-                pictureBox3.Load(selectedFilePath);
+                pbPersonImage.Load(selectedFilePath);
                 // ...
             }
         }
 
         private void llRemoveImage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            pictureBox3.ImageLocation = null;
+            pbPersonImage.ImageLocation = null;
             llRemoveImage.Visible = false;
-        }
-
-        private void ucAddEditPersonInfo_Load(object sender, EventArgs e)
-        {
-            _LoadData();
-        }
-
-        private void btClose_Click(object sender, EventArgs e)
-        {
-            CloseRequested?.Invoke(this, EventArgs.Empty);
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -149,8 +173,8 @@ namespace DVLD.People
             else
                 _Person.Gendor = 0;
 
-            if (pictureBox3.ImageLocation != null)
-                _Person.ImagePath = pictureBox3.ImageLocation;
+            if (pbPersonImage.ImageLocation != null)
+                _Person.ImagePath = pbPersonImage.ImageLocation;
             else
                 _Person.ImagePath = "";
 
@@ -160,15 +184,23 @@ namespace DVLD.People
                 MessageBox.Show("Error: Data Is not Saved Successfully.");
 
             _Mode = enMode.Update;
-            lblMode.Text = "Edit Contact ID = " + _Person.ID;
-            lblPersonID.Text = _Person.ID.ToString();
-            
+            lblMode.Text = "Edit Contact ID = " + _Person.PersonID;
+            lblPersonID.Text = _Person.PersonID.ToString();
+
 
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
 
+        private void frmAddEditPersonInfo_Load_1(object sender, EventArgs e)
+        {
+            _ResetDefualtValues();
+
+            if (_Mode == enMode.Update)
+                _LoadData();
         }
     }
 }

@@ -1,13 +1,13 @@
 ﻿namespace DVLD.People
 {
-    partial class ucAddEditPersonInfo
+    partial class frmAddEditPersonInfo
     {
-        /// <summary> 
+        /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
+        /// <summary>
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,10 +20,10 @@
             base.Dispose(disposing);
         }
 
-        #region Component Designer generated code
+        #region Windows Form Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
+        /// <summary>
+        /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
@@ -35,7 +35,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.llSetImage = new System.Windows.Forms.LinkLabel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pbPersonImage = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
@@ -68,14 +68,13 @@
             this.lblGendor = new System.Windows.Forms.Label();
             this.lblNationalNo = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.lblMode = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.lblPersonID = new System.Windows.Forms.Label();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblMode = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPersonImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -85,7 +84,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -96,7 +95,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.llSetImage);
-            this.groupBox1.Controls.Add(this.pictureBox3);
+            this.groupBox1.Controls.Add(this.pbPersonImage);
             this.groupBox1.Controls.Add(this.pictureBox10);
             this.groupBox1.Controls.Add(this.pictureBox9);
             this.groupBox1.Controls.Add(this.pictureBox8);
@@ -129,12 +128,11 @@
             this.groupBox1.Controls.Add(this.lblGendor);
             this.groupBox1.Controls.Add(this.lblNationalNo);
             this.groupBox1.Controls.Add(this.lblName);
-            this.groupBox1.Location = new System.Drawing.Point(23, 102);
+            this.groupBox1.Location = new System.Drawing.Point(12, 166);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1121, 505);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.Size = new System.Drawing.Size(1176, 535);
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // llRemoveImage
             // 
@@ -146,7 +144,6 @@
             this.llRemoveImage.TabIndex = 41;
             this.llRemoveImage.TabStop = true;
             this.llRemoveImage.Text = "Remove";
-            this.llRemoveImage.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llRemoveImage_LinkClicked);
             // 
             // label5
             // 
@@ -198,18 +195,16 @@
             this.llSetImage.TabIndex = 35;
             this.llSetImage.TabStop = true;
             this.llSetImage.Text = "Set Image";
-            this.llSetImage.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnklblSetImage_LinkClicked);
             // 
-            // pictureBox3
+            // pbPersonImage
             // 
-            this.pictureBox3.ErrorImage = null;
-            this.pictureBox3.Image = global::DVLD.Properties.Resources.Male_512;
-            this.pictureBox3.Location = new System.Drawing.Point(849, 99);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(204, 201);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 33;
-            this.pictureBox3.TabStop = false;
+            this.pbPersonImage.ErrorImage = null;
+            this.pbPersonImage.Location = new System.Drawing.Point(849, 99);
+            this.pbPersonImage.Name = "pbPersonImage";
+            this.pbPersonImage.Size = new System.Drawing.Size(204, 201);
+            this.pbPersonImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbPersonImage.TabIndex = 33;
+            this.pbPersonImage.TabStop = false;
             // 
             // pictureBox10
             // 
@@ -340,16 +335,16 @@
             // cbCountry
             // 
             this.cbCountry.FormattingEnabled = true;
-            this.cbCountry.Location = new System.Drawing.Point(617, 229);
+            this.cbCountry.Location = new System.Drawing.Point(609, 228);
             this.cbCountry.Name = "cbCountry";
-            this.cbCountry.Size = new System.Drawing.Size(208, 24);
+            this.cbCountry.Size = new System.Drawing.Size(208, 33);
             this.cbCountry.TabIndex = 21;
             // 
             // dtpDateOfBirth
             // 
-            this.dtpDateOfBirth.Location = new System.Drawing.Point(617, 127);
+            this.dtpDateOfBirth.Location = new System.Drawing.Point(617, 120);
             this.dtpDateOfBirth.Name = "dtpDateOfBirth";
-            this.dtpDateOfBirth.Size = new System.Drawing.Size(200, 22);
+            this.dtpDateOfBirth.Size = new System.Drawing.Size(200, 30);
             this.dtpDateOfBirth.TabIndex = 20;
             // 
             // txtAddress
@@ -364,49 +359,49 @@
             // 
             this.txtEmail.Location = new System.Drawing.Point(178, 238);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(204, 22);
+            this.txtEmail.Size = new System.Drawing.Size(204, 30);
             this.txtEmail.TabIndex = 17;
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(621, 177);
+            this.txtPhone.Location = new System.Drawing.Point(613, 174);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(204, 22);
+            this.txtPhone.Size = new System.Drawing.Size(204, 30);
             this.txtPhone.TabIndex = 16;
             // 
             // txtSecondName
             // 
             this.txtSecondName.Location = new System.Drawing.Point(402, 51);
             this.txtSecondName.Name = "txtSecondName";
-            this.txtSecondName.Size = new System.Drawing.Size(204, 22);
+            this.txtSecondName.Size = new System.Drawing.Size(204, 30);
             this.txtSecondName.TabIndex = 15;
             // 
             // txtThirdName
             // 
             this.txtThirdName.Location = new System.Drawing.Point(621, 51);
             this.txtThirdName.Name = "txtThirdName";
-            this.txtThirdName.Size = new System.Drawing.Size(204, 22);
+            this.txtThirdName.Size = new System.Drawing.Size(204, 30);
             this.txtThirdName.TabIndex = 14;
             // 
             // txtLastName
             // 
             this.txtLastName.Location = new System.Drawing.Point(849, 51);
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(204, 22);
+            this.txtLastName.Size = new System.Drawing.Size(204, 30);
             this.txtLastName.TabIndex = 13;
             // 
             // txtNationalNo
             // 
             this.txtNationalNo.Location = new System.Drawing.Point(178, 127);
             this.txtNationalNo.Name = "txtNationalNo";
-            this.txtNationalNo.Size = new System.Drawing.Size(204, 22);
+            this.txtNationalNo.Size = new System.Drawing.Size(204, 30);
             this.txtNationalNo.TabIndex = 12;
             // 
             // txtFirstName
             // 
             this.txtFirstName.Location = new System.Drawing.Point(178, 51);
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(204, 22);
+            this.txtFirstName.Size = new System.Drawing.Size(204, 30);
             this.txtFirstName.TabIndex = 11;
             // 
             // lblEmail
@@ -429,7 +424,6 @@
             this.btnSave.Text = "Save";
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnClose
             // 
@@ -441,7 +435,6 @@
             this.btnClose.Text = "Close";
             this.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btClose_Click);
             // 
             // lblCountry
             // 
@@ -513,67 +506,71 @@
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Name:";
             // 
-            // lblMode
+            // lblPersonID
             // 
-            this.lblMode.AutoSize = true;
-            this.lblMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMode.ForeColor = System.Drawing.Color.Red;
-            this.lblMode.Location = new System.Drawing.Point(417, 9);
-            this.lblMode.Name = "lblMode";
-            this.lblMode.Size = new System.Drawing.Size(334, 46);
-            this.lblMode.TabIndex = 39;
-            this.lblMode.Text = "Add New Person";
+            this.lblPersonID.AutoSize = true;
+            this.lblPersonID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPersonID.Location = new System.Drawing.Point(206, 127);
+            this.lblPersonID.Name = "lblPersonID";
+            this.lblPersonID.Size = new System.Drawing.Size(37, 20);
+            this.lblPersonID.TabIndex = 46;
+            this.lblPersonID.Text = "N/A";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(18, 64);
+            this.label7.Location = new System.Drawing.Point(29, 128);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(99, 25);
-            this.label7.TabIndex = 41;
+            this.label7.TabIndex = 45;
             this.label7.Text = "PersonID:";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // lblPersonID
+            // lblMode
             // 
-            this.lblPersonID.AutoSize = true;
-            this.lblPersonID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPersonID.Location = new System.Drawing.Point(197, 68);
-            this.lblPersonID.Name = "lblPersonID";
-            this.lblPersonID.Size = new System.Drawing.Size(37, 20);
-            this.lblPersonID.TabIndex = 42;
-            this.lblPersonID.Text = "N/A";
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.Image = global::DVLD.Properties.Resources.Number_32;
-            this.pictureBox11.Location = new System.Drawing.Point(155, 57);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox11.TabIndex = 41;
-            this.pictureBox11.TabStop = false;
+            this.lblMode.AutoSize = true;
+            this.lblMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMode.ForeColor = System.Drawing.Color.Red;
+            this.lblMode.Location = new System.Drawing.Point(321, 9);
+            this.lblMode.Name = "lblMode";
+            this.lblMode.Size = new System.Drawing.Size(490, 69);
+            this.lblMode.TabIndex = 43;
+            this.lblMode.Text = "Add New Person";
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // ucAddEditPersonInfo
+            // pictureBox12
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.pictureBox12.Image = global::DVLD.Properties.Resources.Number_32;
+            this.pictureBox12.Location = new System.Drawing.Point(144, 128);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox12.TabIndex = 44;
+            this.pictureBox12.TabStop = false;
+            // 
+            // frmAddEditPersonInfo
+            // 
+            this.AcceptButton = this.btnSave;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pictureBox11);
+            this.ClientSize = new System.Drawing.Size(1200, 703);
+            this.Controls.Add(this.pictureBox12);
             this.Controls.Add(this.lblPersonID);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.lblMode);
             this.Controls.Add(this.groupBox1);
-            this.Name = "ucAddEditPersonInfo";
-            this.Size = new System.Drawing.Size(1276, 668);
-            this.Load += new System.EventHandler(this.ucAddEditPersonInfo_Load);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Name = "frmAddEditPersonInfo";
+            this.Text = "Add / Edit Person Info.";
+            this.Load += new System.EventHandler(this.frmAddEditPersonInfo_Load_1);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPersonImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
@@ -583,7 +580,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -592,30 +589,13 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label lblCountry;
-        private System.Windows.Forms.Label lblPhone;
-        private System.Windows.Forms.Label lblDateOfBirth;
-        private System.Windows.Forms.Label lblAddress;
-        private System.Windows.Forms.Label lblGendor;
-        private System.Windows.Forms.Label lblNationalNo;
-        private System.Windows.Forms.Label lblName;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.RichTextBox txtAddress;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtPhone;
-        private System.Windows.Forms.TextBox txtSecondName;
-        private System.Windows.Forms.TextBox txtThirdName;
-        private System.Windows.Forms.TextBox txtLastName;
-        private System.Windows.Forms.TextBox txtNationalNo;
-        private System.Windows.Forms.TextBox txtFirstName;
-        private System.Windows.Forms.RadioButton rbFemale;
-        private System.Windows.Forms.RadioButton rbMale;
-        private System.Windows.Forms.ComboBox cbCountry;
-        private System.Windows.Forms.DateTimePicker dtpDateOfBirth;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.LinkLabel llRemoveImage;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.LinkLabel llSetImage;
+        private System.Windows.Forms.PictureBox pbPersonImage;
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox pictureBox8;
@@ -625,17 +605,33 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.LinkLabel llSetImage;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblMode;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RadioButton rbFemale;
+        private System.Windows.Forms.RadioButton rbMale;
+        private System.Windows.Forms.ComboBox cbCountry;
+        private System.Windows.Forms.DateTimePicker dtpDateOfBirth;
+        private System.Windows.Forms.RichTextBox txtAddress;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtPhone;
+        private System.Windows.Forms.TextBox txtSecondName;
+        private System.Windows.Forms.TextBox txtThirdName;
+        private System.Windows.Forms.TextBox txtLastName;
+        private System.Windows.Forms.TextBox txtNationalNo;
+        private System.Windows.Forms.TextBox txtFirstName;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label lblCountry;
+        private System.Windows.Forms.Label lblPhone;
+        private System.Windows.Forms.Label lblDateOfBirth;
+        private System.Windows.Forms.Label lblAddress;
+        private System.Windows.Forms.Label lblGendor;
+        private System.Windows.Forms.Label lblNationalNo;
+        private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblPersonID;
-        private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.LinkLabel llRemoveImage;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblMode;
+        private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
