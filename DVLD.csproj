@@ -52,6 +52,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Globel Class\clsValidatoin.cs" />
     <Compile Include="People\frmAddEditPersonInfo.cs">
       <SubType>Form</SubType>
     </Compile>
