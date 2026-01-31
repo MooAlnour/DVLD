@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.Versioning;
 using System.Text;
@@ -132,6 +133,42 @@ namespace DVLD.People
             cbCountry.SelectedIndex = cbCountry.FindString(clsCountry.Find(_Person.NationalityCountryID).CountryName);
         }
 
+        private bool _HandlePersonImage()
+        {
+            if (_Person.ImagePath!=pbPersonImage.ImageLocation)
+            {
+                if (_Person.ImagePath=="")
+                {
+                    try
+                    {
+                        File.Delete(_Person.ImagePath);
+                    }
+                    catch
+                    {
+
+                    }
+                }
+            }
+            if (pbPersonImage.ImageLocation !=null)
+            {
+
+                string SourceImageFile = pbPersonImage.ImageLocation.ToString();
+                if (clsUtil.CopyImageToProjectImagesFolder(ref SourceImageFile))
+                {
+                    pbPersonImage.ImageLocation = SourceImageFile;
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Error Copying Image File", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
+            }
+            return true;
+        }
+
+
         private void btnSave_Click_1(object sender, EventArgs e)
         {
 
@@ -142,6 +179,10 @@ namespace DVLD.People
                 return;
 
             }
+
+            if (!_HandlePersonImage())
+                return;
+
 
             int CountryID = clsCountry.Find(cbCountry.Text).ID;
 
