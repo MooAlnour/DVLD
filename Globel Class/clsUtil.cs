@@ -71,7 +71,6 @@ namespace DVLD.Globel_Class
             try
             {
                 File.Copy(sourceFile, destinationFile, true);
-
             }
             catch (IOException iox)
             {

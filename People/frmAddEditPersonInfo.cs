@@ -57,11 +57,11 @@ namespace DVLD.People
 
             if (_Mode == enMode.AddNew)
             {
-                lblMode.Text = "Add New Person";
+                lblTitle.Text = "Add New Person";
                 _Person = new clsPerson();
             }
             else
-                lblMode.Text = "Update Person";
+                lblTitle.Text = "Update Person";
 
             if (rbFemale.Checked)
             
@@ -103,7 +103,7 @@ namespace DVLD.People
                 this.Close();
                 return;
             }
-            lblMode.Text = "Edit Person ID = " + _PersonID.ToString();
+            lblTitle.Text = "Edit Person ID = " + _PersonID.ToString();
             lblPersonID.Text = _PersonID.ToString();
             txtFirstName.Text = _Person.FirstName;
             txtSecondName.Text = _Person.SecondName;
@@ -214,15 +214,9 @@ namespace DVLD.People
                 MessageBox.Show("Error: Data Is not Saved Successfully.");
 
             _Mode = enMode.Update;
-            lblMode.Text = "Edit Contact ID = " + _Person.PersonID;
+            lblTitle.Text = "Edit Contact ID = " + _Person.PersonID;
             lblPersonID.Text = _Person.PersonID.ToString();
 
-        }
-
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void frmAddEditPersonInfo_Load_1(object sender, EventArgs e)
@@ -232,38 +226,6 @@ namespace DVLD.People
             if (_Mode == enMode.Update)
                 _LoadData();
         }
-
-       
-        private void llSetImage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            openFileDialog1.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
-            openFileDialog1.FilterIndex = 1;
-            openFileDialog1.RestoreDirectory = true;
-
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                // Process the selected file
-                string selectedFilePath = openFileDialog1.FileName;
-                //MessageBox.Show("Selected Image is:" + selectedFilePath);
-
-                pbPersonImage.Load(selectedFilePath);
-                // ...
-            }
-        }
-
-        private void llRemoveImage_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            pbPersonImage.ImageLocation = null;
-
-            if (rbMale.Checked)
-
-                pbPersonImage.Image = Resources.Male_512;
-            else
-                pbPersonImage.Image = Resources.Female_512;
-
-                llRemoveImage.Visible = false;
-        }
-
 
         private void ValidateEmptyTextBox(object sender, CancelEventArgs e)
         {
@@ -329,7 +291,42 @@ namespace DVLD.People
 
         }
 
-        private void rbMale_Click(object sender, EventArgs e)
+        private void llSetImage_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            openFileDialog1.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
+            openFileDialog1.FilterIndex = 1;
+            openFileDialog1.RestoreDirectory = true;
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                // Process the selected file
+                string selectedFilePath = openFileDialog1.FileName;
+                //MessageBox.Show("Selected Image is:" + selectedFilePath);
+
+                pbPersonImage.Load(selectedFilePath);
+                // ...
+            }
+        }
+
+        private void llRemoveImage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            pbPersonImage.ImageLocation = null;
+
+            if (rbMale.Checked)
+
+                pbPersonImage.Image = Resources.Male_512;
+            else
+                pbPersonImage.Image = Resources.Female_512;
+
+            llRemoveImage.Visible = false;
+        }
+
+        private void btnClose_Click_2(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void rbMale_Click_1(object sender, EventArgs e)
         {
             if (pbPersonImage.ImageLocation == null)
             {
@@ -337,16 +334,12 @@ namespace DVLD.People
             }
         }
 
-        private void rbFemale_Click(object sender, EventArgs e)
+        private void rbFemale_Click_1(object sender, EventArgs e)
         {
             if (pbPersonImage.ImageLocation == null)
             {
                 pbPersonImage.Image = Resources.Female_512;
             }
-        }
-        private void btnClose_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

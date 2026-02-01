@@ -90,7 +90,7 @@
             this.sendEmailToolStripMenuItem,
             this.phToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(242, 238);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(242, 266);
             // 
             // showDeatilsToolStripMenuItem
             // 
@@ -100,6 +100,7 @@
             this.showDeatilsToolStripMenuItem.Name = "showDeatilsToolStripMenuItem";
             this.showDeatilsToolStripMenuItem.Size = new System.Drawing.Size(241, 38);
             this.showDeatilsToolStripMenuItem.Text = "Show Deatils";
+            this.showDeatilsToolStripMenuItem.Click += new System.EventHandler(this.showDeatilsToolStripMenuItem_Click);
             // 
             // addNewPersonToolStripMenuItem
             // 

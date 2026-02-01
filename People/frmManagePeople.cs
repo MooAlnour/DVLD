@@ -97,5 +97,20 @@ namespace DVLD.People
 
             }
         }
+
+        private void showDeatilsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dgvAllPeople.CurrentRow != null)
+            {
+                int personID = Convert.ToInt32(dgvAllPeople.CurrentRow.Cells[0].Value);
+                frmPersonInformation frmPerson = new frmPersonInformation(personID);
+                frmPerson.ShowDialog();
+
+            }
+            else
+            {
+                MessageBox.Show("Please select a row first.");
+            }
+        }
     }
 }
