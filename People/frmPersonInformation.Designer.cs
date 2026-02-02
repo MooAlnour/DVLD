@@ -1,6 +1,6 @@
 ﻿namespace DVLD.People
 {
-    partial class frmPersonInformation
+    partial class Form1
     {
         /// <summary>
         /// Required designer variable.
@@ -28,56 +28,53 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.ucPersonDetails1 = new DVLD.People.Controls.ucPersonDetails();
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
-            this.ucPersonDetails1 = new DVLD.People.Controls.ucPersonDetails();
             this.SuspendLayout();
+            // 
+            // ucPersonDetails1
+            // 
+            this.ucPersonDetails1.Location = new System.Drawing.Point(12, 81);
+            this.ucPersonDetails1.Name = "ucPersonDetails1";
+            this.ucPersonDetails1.Size = new System.Drawing.Size(875, 324);
+            this.ucPersonDetails1.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(279, 9);
+            this.label1.Location = new System.Drawing.Point(197, 9);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(431, 69);
-            this.label1.TabIndex = 0;
+            this.label1.TabIndex = 1;
             this.label1.Text = "Person Details";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnClose
             // 
             this.btnClose.Image = global::DVLD.Properties.Resources.Close_32;
-            this.btnClose.Location = new System.Drawing.Point(858, 438);
+            this.btnClose.Location = new System.Drawing.Point(742, 429);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(193, 51);
-            this.btnClose.TabIndex = 9;
+            this.btnClose.Size = new System.Drawing.Size(145, 37);
+            this.btnClose.TabIndex = 10;
             this.btnClose.Text = "Close";
             this.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // ucPersonDetails1
+            // Form1
             // 
-            this.ucPersonDetails1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ucPersonDetails1.Location = new System.Drawing.Point(-1, 67);
-            this.ucPersonDetails1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ucPersonDetails1.Name = "ucPersonDetails1";
-            this.ucPersonDetails1.Size = new System.Drawing.Size(1052, 363);
-            this.ucPersonDetails1.TabIndex = 10;
-            // 
-            // frmPersonInformation
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1077, 501);
-            this.Controls.Add(this.ucPersonDetails1);
+            this.ClientSize = new System.Drawing.Size(935, 477);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label1);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "frmPersonInformation";
-            this.Text = "frmPersonInformation";
+            this.Controls.Add(this.ucPersonDetails1);
+            this.Name = "Form1";
+            this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -85,8 +82,8 @@
 
         #endregion
 
+        private Controls.ucPersonDetails ucPersonDetails1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnClose;
-        private Controls.ucPersonDetails ucPersonDetails1;
     }
 }

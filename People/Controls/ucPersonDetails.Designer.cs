@@ -104,7 +104,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Size = new System.Drawing.Size(820, 291);
+            this.groupBox1.Size = new System.Drawing.Size(831, 300);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Person Information";
@@ -113,7 +113,7 @@
             // 
             this.llEditPersonInfo.AutoSize = true;
             this.llEditPersonInfo.Enabled = false;
-            this.llEditPersonInfo.Location = new System.Drawing.Point(658, 37);
+            this.llEditPersonInfo.Location = new System.Drawing.Point(674, 37);
             this.llEditPersonInfo.Name = "llEditPersonInfo";
             this.llEditPersonInfo.Size = new System.Drawing.Size(149, 25);
             this.llEditPersonInfo.TabIndex = 139;
@@ -153,6 +153,7 @@
             this.lblDateOfBirth.Size = new System.Drawing.Size(68, 25);
             this.lblDateOfBirth.TabIndex = 136;
             this.lblDateOfBirth.Text = "[????]";
+            this.lblDateOfBirth.Click += new System.EventHandler(this.lblDateOfBirth_Click);
             // 
             // lblGendor
             // 
@@ -406,7 +407,7 @@
             this.pbPersonImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbPersonImage.Image = global::DVLD.Properties.Resources.Male_512;
             this.pbPersonImage.InitialImage = null;
-            this.pbPersonImage.Location = new System.Drawing.Point(635, 79);
+            this.pbPersonImage.Location = new System.Drawing.Point(654, 79);
             this.pbPersonImage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pbPersonImage.Name = "pbPersonImage";
             this.pbPersonImage.Size = new System.Drawing.Size(169, 167);

@@ -91,7 +91,7 @@ namespace DVLD.People.Controls
             lblGendor.Text = _Person.Gendor == 0 ? "Male" : "Female";
             lblAddress.Text = _Person.Address;
             lblPhone.Text = _Person.Phone;
-            lblDateOfBirth.Text = _Person.DateOfBirth.ToString();
+            lblDateOfBirth.Text = _Person.DateOfBirth.ToString("d/M/yyyy");
             lblCountry.Text = clsCountry.Find(_Person.NationalityCountryID).CountryName;
             _LoadPersonIamage();
         }
@@ -119,6 +119,9 @@ namespace DVLD.People.Controls
                     MessageBox.Show("Could not find this image: = " + ImagePath, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-       
+        private void lblDateOfBirth_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

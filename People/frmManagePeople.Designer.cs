@@ -56,7 +56,7 @@
             this.lblManagePeople.BackColor = System.Drawing.SystemColors.Control;
             this.lblManagePeople.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblManagePeople.ForeColor = System.Drawing.Color.Brown;
-            this.lblManagePeople.Location = new System.Drawing.Point(548, 226);
+            this.lblManagePeople.Location = new System.Drawing.Point(449, 232);
             this.lblManagePeople.Name = "lblManagePeople";
             this.lblManagePeople.Size = new System.Drawing.Size(257, 38);
             this.lblManagePeople.TabIndex = 2;
@@ -75,7 +75,7 @@
             this.dgvAllPeople.ReadOnly = true;
             this.dgvAllPeople.RowHeadersWidth = 51;
             this.dgvAllPeople.RowTemplate.Height = 24;
-            this.dgvAllPeople.Size = new System.Drawing.Size(1344, 146);
+            this.dgvAllPeople.Size = new System.Drawing.Size(1126, 146);
             this.dgvAllPeople.TabIndex = 4;
             // 
             // contextMenuStrip1
@@ -90,7 +90,7 @@
             this.sendEmailToolStripMenuItem,
             this.phToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(242, 266);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(242, 238);
             // 
             // showDeatilsToolStripMenuItem
             // 
@@ -196,7 +196,7 @@
             // btClose
             // 
             this.btClose.Image = global::DVLD.Properties.Resources.Close_32;
-            this.btClose.Location = new System.Drawing.Point(1231, 466);
+            this.btClose.Location = new System.Drawing.Point(1016, 466);
             this.btClose.Name = "btClose";
             this.btClose.Size = new System.Drawing.Size(125, 47);
             this.btClose.TabIndex = 5;
@@ -209,7 +209,7 @@
             // button1
             // 
             this.button1.Image = global::DVLD.Properties.Resources.Add_Person_40;
-            this.button1.Location = new System.Drawing.Point(1237, 249);
+            this.button1.Location = new System.Drawing.Point(1016, 249);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(122, 62);
             this.button1.TabIndex = 3;
@@ -219,7 +219,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::DVLD.Properties.Resources.People_400;
-            this.pictureBox1.Location = new System.Drawing.Point(532, -2);
+            this.pictureBox1.Location = new System.Drawing.Point(437, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(285, 217);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -230,7 +230,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1371, 543);
+            this.ClientSize = new System.Drawing.Size(1144, 543);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
