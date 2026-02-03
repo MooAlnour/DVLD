@@ -103,7 +103,7 @@ namespace DVLD.People
             if (dgvAllPeople.CurrentRow != null)
             {
                 int personID = Convert.ToInt32(dgvAllPeople.CurrentRow.Cells[0].Value);
-                frmPersonInformation frmPerson = new frmPersonInformation(personID);
+                frmShowPerson frmPerson = new frmShowPerson(personID);
                 frmPerson.ShowDialog();
 
             }
