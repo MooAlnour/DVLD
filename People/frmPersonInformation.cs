@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace DVLD.People
 {
-    public partial class Form1: Form
+    public partial class frmPersonInformation: Form
     {
         
-        public Form1(int PersonID)
+        public frmPersonInformation(int PersonID)
         {
             InitializeComponent();
             ucPersonDetails1.LoadPersonInfo(PersonID);
         }
 
-        public Form1(string NationalNo)
+        public frmPersonInformation(string NationalNo)
         {
             InitializeComponent();
             ucPersonDetails1.LoadPersonInfo(NationalNo);

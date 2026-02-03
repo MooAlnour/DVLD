@@ -1,6 +1,6 @@
 ﻿namespace DVLD.People
 {
-    partial class Form1
+    partial class frmPersonInformation
     {
         /// <summary>
         /// Required designer variable.
@@ -65,7 +65,7 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // Form1
+            // frmPersonInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -73,8 +73,8 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ucPersonDetails1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "frmPersonInformation";
+            this.Text = "Person Information";
             this.ResumeLayout(false);
             this.PerformLayout();
 

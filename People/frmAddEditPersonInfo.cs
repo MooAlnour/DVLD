@@ -20,7 +20,11 @@ namespace DVLD.People
         public enum enMode { AddNew = 0, Update = 1 };
         private enMode _Mode;
 
-     
+        public delegate void DataBackEventHandler(object sender, int PersonID);
+
+        public event DataBackEventHandler DataBack;
+
+
         private int _PersonID = -1;
 
          clsPerson _Person;
@@ -209,13 +213,16 @@ namespace DVLD.People
                 _Person.ImagePath = "";
 
             if (_Person.Save())
+            {
+                _Mode = enMode.Update;
+                lblTitle.Text = "Edit Contact ID = " + _Person.PersonID;
+                lblPersonID.Text = _Person.PersonID.ToString();
+
                 MessageBox.Show("Data Saved Successfully.");
+                DataBack?.Invoke(this, _Person.PersonID);
+            }
             else
                 MessageBox.Show("Error: Data Is not Saved Successfully.");
-
-            _Mode = enMode.Update;
-            lblTitle.Text = "Edit Contact ID = " + _Person.PersonID;
-            lblPersonID.Text = _Person.PersonID.ToString();
 
         }
 
