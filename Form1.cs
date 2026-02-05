@@ -20,8 +20,9 @@ namespace DVLD
 
         private void peopleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmManagePeople frmPeople = new frmManagePeople();
-            frmPeople.Show();
+            frmListPeople listPeople = new frmListPeople();
+            listPeople.ShowDialog();
+
         }
 
         private void Form1_Load(object sender, EventArgs e)

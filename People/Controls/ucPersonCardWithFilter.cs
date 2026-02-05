@@ -99,14 +99,15 @@ namespace DVLD.People.Controls
                     ucPersonDetails1.LoadPersonInfo(txtFilterValue.Text);
                     break;
             }
-            if (OnPersonSelected != null)
+            if (OnPersonSelected != null && FilterEnabled) 
                 // Raise the event with a parameter
-                PersonSelected(ucPersonDetails1.PersonID);
+                OnPersonSelected (ucPersonDetails1.PersonID);
         }
       
         private void ucPersonCardWithFilter_Load(object sender, EventArgs e)
         {
-             
+            cbFilterBy.SelectedIndex = 1;
+            txtFilterValue.Focus();
         }
 
         private void cbFilterBy_SelectedIndexChanged(object sender, EventArgs e)
@@ -114,5 +115,48 @@ namespace DVLD.People.Controls
             txtFilterValue.Text = "";
             txtFilterValue.Focus();
         }
+
+        private void btnAddNewPerson_Click(object sender, EventArgs e)
+        {
+            frmAddEditPersonInfo frmAdd = new frmAddEditPersonInfo();
+            frmAdd.DataBack += DataBack;
+            frmAdd.ShowDialog();
+        }
+
+        private void DataBack(object sender,int PersonID)
+        {
+            cbFilterBy.SelectedIndex = 1;
+            txtFilterValue.Text = PersonID.ToString();
+            ucPersonDetails1.LoadPersonInfo(PersonID);
+        }
+
+        public void FilterFocus()
+        {
+            txtFilterValue.Focus();
+        }
+
+        private void txtFilterValue_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtFilterValue.Text.Trim()))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(txtFilterValue, "This field is required!");
+            }
+            else
+            {
+                errorProvider1.SetError(txtFilterValue, null);
+            }
+        }
+
+        private void txtFilterValue_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btnFind.PerformClick();
+            }
+            if (cbFilterBy.Text == "Person ID")
+                e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
     }
 }

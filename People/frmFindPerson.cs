@@ -12,9 +12,24 @@ namespace DVLD.People
 {
     public partial class frmFindPerson: Form
     {
+
+        public delegate void DataBackEventHandler(object sender, int PersonID);
+
+        public event DataBackEventHandler DataBack;
+
         public frmFindPerson()
         {
             InitializeComponent();
+        }
+
+        private void frmFindPerson_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            DataBack?.Invoke(this,ucPersonCardWithFilter1.PersonID);
         }
     }
 }

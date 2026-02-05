@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.ucPersonCardWithFilter1 = new DVLD.People.Controls.ucPersonCardWithFilter();
+            this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -45,20 +46,40 @@
             // 
             // ucPersonCardWithFilter1
             // 
-            this.ucPersonCardWithFilter1.Location = new System.Drawing.Point(12, 73);
+            this.ucPersonCardWithFilter1.FilterEnabled = true;
+            this.ucPersonCardWithFilter1.Location = new System.Drawing.Point(40, 81);
             this.ucPersonCardWithFilter1.Name = "ucPersonCardWithFilter1";
+            this.ucPersonCardWithFilter1.ShowAddPerson = true;
             this.ucPersonCardWithFilter1.Size = new System.Drawing.Size(871, 428);
             this.ucPersonCardWithFilter1.TabIndex = 1;
+            // 
+            // btnClose
+            // 
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnClose.Image = global::DVLD.Properties.Resources.Close_32;
+            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClose.Location = new System.Drawing.Point(763, 505);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(126, 37);
+            this.btnClose.TabIndex = 16;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // frmFindPerson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(915, 513);
+            this.CancelButton = this.btnClose;
+            this.ClientSize = new System.Drawing.Size(967, 556);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.ucPersonCardWithFilter1);
             this.Controls.Add(this.label1);
             this.Name = "frmFindPerson";
-            this.Text = "frmFindPerson";
+            this.Text = "Find Person";
+            this.Load += new System.EventHandler(this.frmFindPerson_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -68,5 +89,6 @@
 
         private System.Windows.Forms.Label label1;
         private Controls.ucPersonCardWithFilter ucPersonCardWithFilter1;
+        private System.Windows.Forms.Button btnClose;
     }
 }

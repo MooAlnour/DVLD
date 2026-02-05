@@ -1,6 +1,6 @@
 ﻿namespace DVLD.People
 {
-    partial class frmPersonInformation
+    partial class frmShowPerson
     {
         /// <summary>
         /// Required designer variable.
@@ -54,8 +54,9 @@
             // 
             // btnClose
             // 
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.Image = global::DVLD.Properties.Resources.Close_32;
-            this.btnClose.Location = new System.Drawing.Point(742, 429);
+            this.btnClose.Location = new System.Drawing.Point(719, 410);
             this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(145, 37);
@@ -65,15 +66,16 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // frmPersonInformation
+            // frmShowPerson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(935, 477);
+            this.CancelButton = this.btnClose;
+            this.ClientSize = new System.Drawing.Size(902, 453);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ucPersonDetails1);
-            this.Name = "frmPersonInformation";
+            this.Name = "frmShowPerson";
             this.Text = "Person Information";
             this.ResumeLayout(false);
             this.PerformLayout();

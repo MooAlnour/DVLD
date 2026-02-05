@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gbFilters = new System.Windows.Forms.GroupBox();
             this.cbFilterBy = new System.Windows.Forms.ComboBox();
             this.txtFilterValue = new System.Windows.Forms.TextBox();
@@ -35,7 +36,9 @@
             this.btnAddNewPerson = new System.Windows.Forms.Button();
             this.btnFind = new System.Windows.Forms.Button();
             this.ucPersonDetails1 = new DVLD.People.Controls.ucPersonDetails();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbFilters.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // gbFilters
@@ -73,6 +76,8 @@
             this.txtFilterValue.Name = "txtFilterValue";
             this.txtFilterValue.Size = new System.Drawing.Size(214, 22);
             this.txtFilterValue.TabIndex = 17;
+            this.txtFilterValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFilterValue_KeyPress);
+            this.txtFilterValue.Validating += new System.ComponentModel.CancelEventHandler(this.txtFilterValue_Validating);
             // 
             // label1
             // 
@@ -95,6 +100,7 @@
             this.btnAddNewPerson.Size = new System.Drawing.Size(44, 37);
             this.btnAddNewPerson.TabIndex = 20;
             this.btnAddNewPerson.UseVisualStyleBackColor = true;
+            this.btnAddNewPerson.Click += new System.EventHandler(this.btnAddNewPerson_Click);
             // 
             // btnFind
             // 
@@ -108,10 +114,14 @@
             // 
             // ucPersonDetails1
             // 
-            this.ucPersonDetails1.Location = new System.Drawing.Point(3, 95);
+            this.ucPersonDetails1.Location = new System.Drawing.Point(0, 98);
             this.ucPersonDetails1.Name = "ucPersonDetails1";
             this.ucPersonDetails1.Size = new System.Drawing.Size(865, 330);
             this.ucPersonDetails1.TabIndex = 18;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // ucPersonCardWithFilter
             // 
@@ -124,6 +134,7 @@
             this.Load += new System.EventHandler(this.ucPersonCardWithFilter_Load);
             this.gbFilters.ResumeLayout(false);
             this.gbFilters.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -137,5 +148,6 @@
         private System.Windows.Forms.TextBox txtFilterValue;
         private System.Windows.Forms.Label label1;
         private ucPersonDetails ucPersonDetails1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

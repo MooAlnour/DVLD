@@ -600,10 +600,12 @@
             // 
             // frmAddEditPersonInfo
             // 
+            this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.ClientSize = new System.Drawing.Size(954, 477);
+            this.CancelButton = this.btnClose;
+            this.ClientSize = new System.Drawing.Size(967, 467);
             this.Controls.Add(this.pictureBox10);
             this.Controls.Add(this.lblPersonID);
             this.Controls.Add(this.label22);
