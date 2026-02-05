@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.gbFilters = new System.Windows.Forms.GroupBox();
+            this.btnAddNewPerson = new System.Windows.Forms.Button();
+            this.btnFind = new System.Windows.Forms.Button();
             this.cbFilterBy = new System.Windows.Forms.ComboBox();
             this.txtFilterValue = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnAddNewPerson = new System.Windows.Forms.Button();
-            this.btnFind = new System.Windows.Forms.Button();
             this.ucPersonDetails1 = new DVLD.People.Controls.ucPersonDetails();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbFilters.SuspendLayout();
@@ -54,6 +54,30 @@
             this.gbFilters.TabIndex = 17;
             this.gbFilters.TabStop = false;
             this.gbFilters.Text = "Filter";
+            // 
+            // btnAddNewPerson
+            // 
+            this.btnAddNewPerson.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAddNewPerson.Image = global::DVLD.Properties.Resources.AddPerson_32;
+            this.btnAddNewPerson.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddNewPerson.Location = new System.Drawing.Point(603, 25);
+            this.btnAddNewPerson.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAddNewPerson.Name = "btnAddNewPerson";
+            this.btnAddNewPerson.Size = new System.Drawing.Size(44, 37);
+            this.btnAddNewPerson.TabIndex = 20;
+            this.btnAddNewPerson.UseVisualStyleBackColor = true;
+            this.btnAddNewPerson.Click += new System.EventHandler(this.btnAddNewPerson_Click);
+            // 
+            // btnFind
+            // 
+            this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFind.Image = global::DVLD.Properties.Resources.SearchPerson;
+            this.btnFind.Location = new System.Drawing.Point(552, 25);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(44, 37);
+            this.btnFind.TabIndex = 18;
+            this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // cbFilterBy
             // 
@@ -88,29 +112,6 @@
             this.label1.Size = new System.Drawing.Size(92, 25);
             this.label1.TabIndex = 19;
             this.label1.Text = "Find By:";
-            // 
-            // btnAddNewPerson
-            // 
-            this.btnAddNewPerson.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAddNewPerson.Image = global::DVLD.Properties.Resources.AddPerson_32;
-            this.btnAddNewPerson.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddNewPerson.Location = new System.Drawing.Point(603, 25);
-            this.btnAddNewPerson.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnAddNewPerson.Name = "btnAddNewPerson";
-            this.btnAddNewPerson.Size = new System.Drawing.Size(44, 37);
-            this.btnAddNewPerson.TabIndex = 20;
-            this.btnAddNewPerson.UseVisualStyleBackColor = true;
-            this.btnAddNewPerson.Click += new System.EventHandler(this.btnAddNewPerson_Click);
-            // 
-            // btnFind
-            // 
-            this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFind.Image = global::DVLD.Properties.Resources.SearchPerson;
-            this.btnFind.Location = new System.Drawing.Point(552, 25);
-            this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(44, 37);
-            this.btnFind.TabIndex = 18;
-            this.btnFind.UseVisualStyleBackColor = true;
             // 
             // ucPersonDetails1
             // 

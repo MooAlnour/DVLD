@@ -158,5 +158,9 @@ namespace DVLD.People.Controls
                 e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

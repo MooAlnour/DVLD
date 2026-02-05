@@ -228,9 +228,9 @@
             this.label22.Location = new System.Drawing.Point(8, 37);
             this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(120, 25);
+            this.label22.Size = new System.Drawing.Size(114, 25);
             this.label22.TabIndex = 113;
-            this.label22.Text = "Person ID :";
+            this.label22.Text = "Person ID:";
             // 
             // label5
             // 
@@ -247,7 +247,7 @@
             // 
             this.lblPersonID.AutoSize = true;
             this.lblPersonID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPersonID.Location = new System.Drawing.Point(118, 37);
+            this.lblPersonID.Location = new System.Drawing.Point(130, 37);
             this.lblPersonID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPersonID.Name = "lblPersonID";
             this.lblPersonID.Size = new System.Drawing.Size(68, 25);
