@@ -239,5 +239,10 @@ namespace DVLD.People
                 txtFilterValue.Focus();
             };
         }
+
+        private void lblRecordsCount_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -35,8 +35,8 @@
             this.cbFilterBy = new System.Windows.Forms.ComboBox();
             this.txtFilterValue = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.ucPersonDetails1 = new DVLD.People.Controls.ucPersonDetails();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ucPersonDetails1 = new DVLD.People.Controls.ucPersonDetails();
             this.gbFilters.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -113,16 +113,16 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "Find By:";
             // 
-            // ucPersonDetails1
-            // 
-            this.ucPersonDetails1.Location = new System.Drawing.Point(0, 98);
-            this.ucPersonDetails1.Name = "ucPersonDetails1";
-            this.ucPersonDetails1.Size = new System.Drawing.Size(865, 330);
-            this.ucPersonDetails1.TabIndex = 18;
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // ucPersonDetails1
+            // 
+            this.ucPersonDetails1.Location = new System.Drawing.Point(0, 91);
+            this.ucPersonDetails1.Name = "ucPersonDetails1";
+            this.ucPersonDetails1.Size = new System.Drawing.Size(830, 255);
+            this.ucPersonDetails1.TabIndex = 18;
             // 
             // ucPersonCardWithFilter
             // 
@@ -131,7 +131,7 @@
             this.Controls.Add(this.ucPersonDetails1);
             this.Controls.Add(this.gbFilters);
             this.Name = "ucPersonCardWithFilter";
-            this.Size = new System.Drawing.Size(871, 428);
+            this.Size = new System.Drawing.Size(830, 353);
             this.Load += new System.EventHandler(this.ucPersonCardWithFilter_Load);
             this.gbFilters.ResumeLayout(false);
             this.gbFilters.PerformLayout();
