@@ -47,7 +47,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
@@ -94,7 +94,7 @@
             this.btnNext.Text = "Next";
             this.btnNext.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnNext.UseVisualStyleBackColor = true;
-            this.btnNext.Click += new System.EventHandler(this.button1_Click);
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // ucPersonCardWithFilter1
             // 
@@ -210,7 +210,7 @@
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.Size = new System.Drawing.Size(195, 22);
             this.txtConfirmPassword.TabIndex = 112;
-            this.txtConfirmPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtEmail_Validating);
+            this.txtConfirmPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtConfirmPassword_Validating);
             // 
             // txtPassword
             // 
@@ -220,6 +220,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(195, 22);
             this.txtPassword.TabIndex = 111;
+            this.txtPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtPassword_Validating);
             // 
             // txtUserName
             // 
@@ -229,6 +230,7 @@
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(195, 22);
             this.txtUserName.TabIndex = 110;
+            this.txtUserName.Validating += new System.ComponentModel.CancelEventHandler(this.txtUserName_Validating);
             // 
             // label5
             // 
@@ -263,17 +265,17 @@
             this.label3.TabIndex = 107;
             this.label3.Text = "User Name:";
             // 
-            // label1
+            // lblTitle
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(277, 9);
-            this.label1.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(336, 54);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Add New User";
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.Red;
+            this.lblTitle.Location = new System.Drawing.Point(277, 9);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(336, 54);
+            this.lblTitle.TabIndex = 1;
+            this.lblTitle.Text = "Add New User";
             // 
             // btnSave
             // 
@@ -288,6 +290,7 @@
             this.btnSave.TabIndex = 114;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnClose
             // 
@@ -314,7 +317,7 @@
             this.ClientSize = new System.Drawing.Size(941, 570);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmAddEditUserInfo";
             this.Text = "Add / Edit User Info";
@@ -339,7 +342,7 @@
         private System.Windows.Forms.TabPage tabPage1;
         private People.Controls.ucPersonCardWithFilter ucPersonCardWithFilter1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label5;
