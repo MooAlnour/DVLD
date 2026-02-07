@@ -15,7 +15,6 @@ namespace DVLD.People.Controls
     {
 
         public event Action<int> OnPersonSelected;
-        // Create a protected method to raise the event with a parameter
         protected virtual void PersonSelected(int PersonID)
         {
             Action<int> handler = OnPersonSelected;
@@ -92,11 +91,14 @@ namespace DVLD.People.Controls
         {
             switch (cbFilterBy.Text)
             {
-                case "Person ID" :
-                    ucPersonDetails1.LoadPersonInfo(int.Parse(txtFilterValue.Text));
-                    break;
+               
+
                 case "National No":
-                    ucPersonDetails1.LoadPersonInfo(txtFilterValue.Text);
+                    ucPersonDetails1.LoadPersonInfo(txtFilterValue.Text.ToString());
+                    break;
+
+                case "Person ID":
+                    ucPersonDetails1.LoadPersonInfo(int.Parse(txtFilterValue.Text));
                     break;
             }
             if (OnPersonSelected != null && FilterEnabled) 
@@ -106,7 +108,7 @@ namespace DVLD.People.Controls
       
         private void ucPersonCardWithFilter_Load(object sender, EventArgs e)
         {
-            cbFilterBy.SelectedIndex = 1;
+            cbFilterBy.SelectedIndex = 0;
             txtFilterValue.Focus();
         }
 
@@ -159,6 +161,19 @@ namespace DVLD.People.Controls
         }
 
         private void btnFind_Click(object sender, EventArgs e)
+        {
+            if (!this.ValidateChildren())
+            {
+                //Here we dont continue becuase the form is not valid
+                MessageBox.Show("Some fileds are not valide!, put the mouse over the red icon(s) to see the erro", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
+            }
+
+            FindNow();
+        }
+
+        private void gbFilters_Enter(object sender, EventArgs e)
         {
 
         }

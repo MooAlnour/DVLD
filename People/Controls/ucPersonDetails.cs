@@ -123,5 +123,10 @@ namespace DVLD.People.Controls
         {
 
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

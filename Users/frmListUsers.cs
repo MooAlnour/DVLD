@@ -48,10 +48,14 @@ namespace DVLD.Users
             }
         }
 
+        private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            frmAddEditUserInfo frmAddEditUser = new frmAddEditUserInfo();
-            frmAddEditUser.ShowDialog();
+
         }
     }
 }

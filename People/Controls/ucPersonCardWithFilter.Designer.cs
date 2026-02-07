@@ -54,6 +54,7 @@
             this.gbFilters.TabIndex = 17;
             this.gbFilters.TabStop = false;
             this.gbFilters.Text = "Filter";
+            this.gbFilters.Enter += new System.EventHandler(this.gbFilters_Enter);
             // 
             // btnAddNewPerson
             // 
@@ -84,7 +85,7 @@
             this.cbFilterBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFilterBy.FormattingEnabled = true;
             this.cbFilterBy.Items.AddRange(new object[] {
-            "National No.",
+            "National No",
             "Person ID"});
             this.cbFilterBy.Location = new System.Drawing.Point(114, 29);
             this.cbFilterBy.Name = "cbFilterBy";
