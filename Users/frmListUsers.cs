@@ -144,5 +144,12 @@ namespace DVLD.Users
             form.ShowDialog();
             _RefreshUsersList();
         }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmChangePassword frmChangePassword = new frmChangePassword((int)dgvUsers.CurrentRow.Cells[0].Value);
+            frmChangePassword.ShowDialog();
+            _RefreshUsersList();
+        }
     }
 }

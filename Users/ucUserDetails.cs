@@ -14,8 +14,19 @@ namespace DVLD.Users
     public partial class ucUserDetails: UserControl
     {
         private int _UserID;
-       
+        public int UserID
+        {
+            get { return _UserID; }
+        }
+
         clsUsers User;
+        public clsUsers clsUsersInfo
+        {
+            get
+            {
+                return User;
+            }
+        }
         public ucUserDetails()
         {
             InitializeComponent();
