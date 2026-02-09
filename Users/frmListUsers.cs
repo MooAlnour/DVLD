@@ -25,8 +25,15 @@ namespace DVLD.Users
         {
             frmAddEditUserInfo frmAddEditUser = new frmAddEditUserInfo();
             frmAddEditUser.ShowDialog();
+            _RefreshUsersList();
         }
-
+        private void _RefreshUsersList()
+        {
+             dtAllUser = clsUsers.GetAllUsers();
+             dtUsers = dtAllUser.DefaultView.ToTable(false, "UserID", "PersonID", "FullName", "IsActive");
+            dgvUsers.DataSource = dtUsers;
+            lblRecordsCount.Text = dgvUsers.Rows.Count.ToString();
+        }
         private void frmListUsers_Load(object sender, EventArgs e)
         {
             dgvUsers.DataSource = dtUsers;
@@ -48,14 +55,94 @@ namespace DVLD.Users
             }
         }
 
-        private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Are you sure you want to delete Person [" + dgvUsers.CurrentRow.Cells[0].Value + "]", "Confirm Delete", MessageBoxButtons.OKCancel) == DialogResult.OK)
 
+            {
+
+                //Perform Delele and refresh
+                if (clsUsers.DeleteUser((int)dgvUsers.CurrentRow.Cells[0].Value))
+                {
+                    MessageBox.Show("Person Deleted Successfully.");
+                    _RefreshUsersList();
+                }
+
+                else
+                    MessageBox.Show("Person is not deleted.");
+
+            }
         }
 
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        private void toolStripMenuItem1_Click_1(object sender, EventArgs e)
         {
+            frmAddEditUserInfo frmAddEditUser = new frmAddEditUserInfo();
+            frmAddEditUser.ShowDialog();
+            _RefreshUsersList();
+        }
 
+        private void cbFilterBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtFilterValue.Visible = (cbFilterBy.Text != "None");
+            if (txtFilterValue.Visible)
+            {
+                txtFilterValue.Text = "";
+                txtFilterValue.Focus();
+            }
+        }
+
+        private void txtFilterValue_TextChanged(object sender, EventArgs e)
+        {
+            string FilterCulomn = "";
+
+            switch (cbFilterBy.Text)
+            {
+                case "Person ID" :
+                    FilterCulomn = "Person ID";
+                    break;
+                case "UserID":
+                    FilterCulomn = "UserID";
+                    break;
+
+                case "IsActive":
+                    FilterCulomn = "IsActive";
+                    break;
+                case "FullName":
+                    FilterCulomn = "FullName";
+                    break;
+            }
+            if (txtFilterValue.Text.Trim()==""&&FilterCulomn=="None")
+            {
+                dtUsers.DefaultView.RowFilter = "";
+                lblRecordsCount.Text = dgvUsers.Rows.Count.ToString();
+            }
+            if (FilterCulomn == "PersonID")
+                dtUsers.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterCulomn, txtFilterValue.Text.Trim());
+            else if(FilterCulomn == "UserID")
+                dtUsers.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterCulomn, txtFilterValue.Text.Trim());
+            else if (FilterCulomn=="IsActive")
+            {
+                dtUsers.DefaultView.RowFilter = "[IsActive] = true";
+                txtFilterValue.Visible = (cbFilterBy.Text != "IsActive");
+            }
+            else
+                dtUsers.DefaultView.RowFilter = string.Format("[{0}] LIKE '{1}%'", FilterCulomn, txtFilterValue.Text.Trim());
+
+            lblRecordsCount.Text = dgvUsers.Rows.Count.ToString();
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddEditUserInfo frmUpdata = new frmAddEditUserInfo((int)dgvUsers.CurrentRow.Cells[0].Value);
+            frmUpdata.ShowDialog();
+            _RefreshUsersList();
+        }
+
+        private void showDetailsToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            frmShowUser form = new frmShowUser((int)dgvUsers.CurrentRow.Cells[0].Value);
+            form.ShowDialog();
+            _RefreshUsersList();
         }
     }
 }

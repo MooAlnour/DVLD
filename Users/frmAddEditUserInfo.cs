@@ -122,16 +122,15 @@ namespace DVLD.Users
                 tabControl1.SelectedTab = tabControl1.TabPages["tabPage2"];
             }
 
-            if (ucPersonCardWithFilter1.PersonID != -1)
+            if (ucPersonCardWithFilter1.PersonID != 0)
                 {
                
-                if (clsUsers.isUserExist(ucPersonCardWithFilter1.PersonID))
+                if (clsUsers.IsUserExistbyPersonID(ucPersonCardWithFilter1.PersonID))
                     {
                         
-                        ucPersonCardWithFilter1.Focus();
-                    MessageBox.Show("Select Person has alredy user");
-                        
-                   
+                    MessageBox.Show("Selected Person already has a user, choose another one.", "Select another Person", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ucPersonCardWithFilter1.FilterFocus();
+
                 }
                 else
                 {
@@ -142,7 +141,7 @@ namespace DVLD.Users
             }
             else
             {
-                MessageBox.Show("Please Select Person");
+                MessageBox.Show("Please Select a Person", "Select a Person", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ucPersonCardWithFilter1.FilterFocus();
             }
 
