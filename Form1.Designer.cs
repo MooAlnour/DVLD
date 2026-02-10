@@ -101,6 +101,7 @@
             this.currentAccountToolStripMenuItem.Name = "currentAccountToolStripMenuItem";
             this.currentAccountToolStripMenuItem.Size = new System.Drawing.Size(244, 38);
             this.currentAccountToolStripMenuItem.Text = "Current Account";
+            this.currentAccountToolStripMenuItem.Click += new System.EventHandler(this.currentAccountToolStripMenuItem_Click);
             // 
             // changeToolStripMenuItem
             // 
@@ -110,6 +111,7 @@
             this.changeToolStripMenuItem.Name = "changeToolStripMenuItem";
             this.changeToolStripMenuItem.Size = new System.Drawing.Size(244, 38);
             this.changeToolStripMenuItem.Text = "Change Password";
+            this.changeToolStripMenuItem.Click += new System.EventHandler(this.changeToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -139,8 +141,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Main";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

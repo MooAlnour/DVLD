@@ -177,5 +177,11 @@ namespace DVLD.Users
             else 
                 _dtAllUser.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterCulomn, FilterVallu);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmLogin frm =new  frmLogin();
+            frm.ShowDialog();
+        }
     }
 }

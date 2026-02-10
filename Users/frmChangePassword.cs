@@ -109,6 +109,8 @@ namespace DVLD.Users
             User = clsUsers.FindByUserID(_UserId);
             if (User==null)
             {
+                MessageBox.Show("Could Not Found User With ID " + _UserId, 
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
                 return;
             }

@@ -1,4 +1,5 @@
-﻿using DVLD.People;
+﻿using DVLD.Globel_Class;
+using DVLD.People;
 using DVLD.Users;
 using System;
 using System.Collections.Generic;
@@ -14,9 +15,11 @@ namespace DVLD
 {
     public partial class Form1: Form
     {
-        public Form1()
+        frmLogin _frmLogin;
+        public Form1(frmLogin frmLogin)
         {
             InitializeComponent();
+            _frmLogin = frmLogin;
         }
 
         private void peopleToolStripMenuItem_Click(object sender, EventArgs e)
@@ -39,7 +42,21 @@ namespace DVLD
 
         private void logeOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            clsGlobal.CurrentUser = null;
+            _frmLogin.Show();
+            this.Close();
+        }
 
+        private void currentAccountToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmShowUser frmShow = new frmShowUser(clsGlobal.CurrentUser.UserID);
+            frmShow.ShowDialog();
+        }
+
+        private void changeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmChangePassword frmChangePassword = new frmChangePassword(clsGlobal.CurrentUser.UserID);
+            frmChangePassword.ShowDialog();
         }
     }
 }

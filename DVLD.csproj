@@ -53,6 +53,13 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Globel Class\clsGlobal.cs" />
     <Compile Include="Globel Class\clsUtil.cs" />
     <Compile Include="Globel Class\clsValidatoin.cs" />
     <Compile Include="People\Controls\ucPersonCardWithFilter.cs">
@@ -125,6 +132,9 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="People\Controls\ucPersonCardWithFilter.resx">
       <DependentUpon>ucPersonCardWithFilter.cs</DependentUpon>
@@ -283,6 +293,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sign_out 32 -2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo Final1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconLogo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign_in 321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\closeBlack321.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
