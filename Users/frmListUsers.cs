@@ -17,9 +17,7 @@ namespace DVLD.Users
         {
             InitializeComponent();
         }
-        private static DataTable dtAllUser = clsUsers.GetAllUsers();
-
-        private static DataTable dtUsers = dtAllUser.DefaultView.ToTable(false, "UserID", "PersonID", "FullName", "IsActive");
+        private static DataTable _dtAllUser;
 
         private void btnAddUser_Click(object sender, EventArgs e)
         {
@@ -29,29 +27,32 @@ namespace DVLD.Users
         }
         private void _RefreshUsersList()
         {
-             dtAllUser = clsUsers.GetAllUsers();
-             dtUsers = dtAllUser.DefaultView.ToTable(false, "UserID", "PersonID", "FullName", "IsActive");
-            dgvUsers.DataSource = dtUsers;
+            dgvUsers.DataSource = _dtAllUser;
             lblRecordsCount.Text = dgvUsers.Rows.Count.ToString();
         }
         private void frmListUsers_Load(object sender, EventArgs e)
         {
-            dgvUsers.DataSource = dtUsers;
+            _dtAllUser = clsUsers.GetAllUsers();
+            dgvUsers.DataSource = _dtAllUser;
             cbFilterBy.SelectedIndex = 0;
             lblRecordsCount.Text = dgvUsers.Rows.Count.ToString();
             if (dgvUsers.Rows.Count > 0) 
             {
                 dgvUsers.Columns[0].HeaderText = "User ID";
-                dgvUsers.Columns[0].Width = 220;
+            dgvUsers.Columns[0].Width = 110;
 
-                dgvUsers.Columns[1].HeaderText = "Person ID";
-                dgvUsers.Columns[1].Width = 220;
+            dgvUsers.Columns[1].HeaderText = "Person ID";
+            dgvUsers.Columns[1].Width = 120;
 
-                dgvUsers.Columns[2].HeaderText = "Full Name";
-                dgvUsers.Columns[2].Width = 320;
+            dgvUsers.Columns[2].HeaderText = "Full Name";
+            dgvUsers.Columns[2].Width = 350;
 
-                dgvUsers.Columns[3].HeaderText = "Is Active";
-                dgvUsers.Columns[3].Width = 215;
+            dgvUsers.Columns[3].HeaderText = "UserName";
+            dgvUsers.Columns[3].Width = 120;
+
+            dgvUsers.Columns[4].HeaderText = "Is Active";
+            dgvUsers.Columns[4].Width = 120;
+
             }
         }
 
@@ -84,6 +85,12 @@ namespace DVLD.Users
         private void cbFilterBy_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtFilterValue.Visible = (cbFilterBy.Text != "None");
+            if (cbIsActive.Visible = (cbFilterBy.Text == "IsActive"))
+            {
+                cbIsActive.SelectedIndex = 0;
+                cbIsActive.Focus();
+                txtFilterValue.Visible = false;
+            }
             if (txtFilterValue.Visible)
             {
                 txtFilterValue.Text = "";
@@ -113,20 +120,16 @@ namespace DVLD.Users
             }
             if (txtFilterValue.Text.Trim()==""&&FilterCulomn=="None")
             {
-                dtUsers.DefaultView.RowFilter = "";
+                _dtAllUser.DefaultView.RowFilter = "";
                 lblRecordsCount.Text = dgvUsers.Rows.Count.ToString();
             }
-            if (FilterCulomn == "PersonID")
-                dtUsers.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterCulomn, txtFilterValue.Text.Trim());
-            else if(FilterCulomn == "UserID")
-                dtUsers.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterCulomn, txtFilterValue.Text.Trim());
-            else if (FilterCulomn=="IsActive")
-            {
-                dtUsers.DefaultView.RowFilter = "[IsActive] = true";
-                txtFilterValue.Visible = (cbFilterBy.Text != "IsActive");
-            }
+
+
+
+            if (FilterCulomn == "PersonID"&& FilterCulomn == "UserID")
+                _dtAllUser.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterCulomn, txtFilterValue.Text.Trim());
             else
-                dtUsers.DefaultView.RowFilter = string.Format("[{0}] LIKE '{1}%'", FilterCulomn, txtFilterValue.Text.Trim());
+                _dtAllUser.DefaultView.RowFilter = string.Format("[{0}] LIKE '{1}%'", FilterCulomn, txtFilterValue.Text.Trim());
 
             lblRecordsCount.Text = dgvUsers.Rows.Count.ToString();
         }
@@ -135,7 +138,7 @@ namespace DVLD.Users
         {
             frmAddEditUserInfo frmUpdata = new frmAddEditUserInfo((int)dgvUsers.CurrentRow.Cells[0].Value);
             frmUpdata.ShowDialog();
-            _RefreshUsersList();
+            frmListUsers_Load(null,null);
         }
 
         private void showDetailsToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -150,6 +153,29 @@ namespace DVLD.Users
             frmChangePassword frmChangePassword = new frmChangePassword((int)dgvUsers.CurrentRow.Cells[0].Value);
             frmChangePassword.ShowDialog();
             _RefreshUsersList();
+        }
+
+        private void cbIsActive_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string FilterCulomn = "IsActive";
+            string FilterVallu= cbIsActive.Text;
+            switch (FilterVallu)
+            {
+                case "All":
+                    break;
+                case "Yes":
+                    FilterVallu = "1";
+                    break;
+                case "No":
+                    FilterVallu = "0";
+                    break;
+            }
+
+
+            if (  FilterVallu == "All")
+                _dtAllUser.DefaultView.RowFilter = "";
+            else 
+                _dtAllUser.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterCulomn, FilterVallu);
         }
     }
 }

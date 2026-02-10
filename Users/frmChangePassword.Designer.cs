@@ -201,6 +201,7 @@
             this.Controls.Add(this.ucUserDetails1);
             this.Name = "frmChangePassword";
             this.Text = "frmChangePassword";
+            this.Load += new System.EventHandler(this.frmChangePassword_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();

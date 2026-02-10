@@ -33,6 +33,10 @@
             this.peopleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accountSettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.currentAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.logeOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,11 +82,49 @@
             // 
             // accountSettingToolStripMenuItem
             // 
+            this.accountSettingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.currentAccountToolStripMenuItem,
+            this.changeToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.logeOutToolStripMenuItem});
             this.accountSettingToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accountSettingToolStripMenuItem.Image = global::DVLD.Properties.Resources.account_settings_64;
             this.accountSettingToolStripMenuItem.Name = "accountSettingToolStripMenuItem";
             this.accountSettingToolStripMenuItem.Size = new System.Drawing.Size(255, 68);
             this.accountSettingToolStripMenuItem.Text = "Account Setting";
+            // 
+            // currentAccountToolStripMenuItem
+            // 
+            this.currentAccountToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currentAccountToolStripMenuItem.Image = global::DVLD.Properties.Resources.PersonDetails_321;
+            this.currentAccountToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.currentAccountToolStripMenuItem.Name = "currentAccountToolStripMenuItem";
+            this.currentAccountToolStripMenuItem.Size = new System.Drawing.Size(244, 38);
+            this.currentAccountToolStripMenuItem.Text = "Current Account";
+            // 
+            // changeToolStripMenuItem
+            // 
+            this.changeToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.changeToolStripMenuItem.Image = global::DVLD.Properties.Resources.Password_32;
+            this.changeToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.changeToolStripMenuItem.Name = "changeToolStripMenuItem";
+            this.changeToolStripMenuItem.Size = new System.Drawing.Size(244, 38);
+            this.changeToolStripMenuItem.Text = "Change Password";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(241, 6);
+            // 
+            // logeOutToolStripMenuItem
+            // 
+            this.logeOutToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logeOutToolStripMenuItem.Image = global::DVLD.Properties.Resources.sign_out_32__2;
+            this.logeOutToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.logeOutToolStripMenuItem.Name = "logeOutToolStripMenuItem";
+            this.logeOutToolStripMenuItem.Size = new System.Drawing.Size(244, 38);
+            this.logeOutToolStripMenuItem.Text = "sign Out";
+            this.logeOutToolStripMenuItem.Click += new System.EventHandler(this.logeOutToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -114,6 +156,10 @@
         private System.Windows.Forms.ToolStripMenuItem peopleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem accountSettingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem currentAccountToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem changeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem logeOutToolStripMenuItem;
     }
 }
 

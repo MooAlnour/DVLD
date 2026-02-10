@@ -36,5 +36,10 @@ namespace DVLD
             frmListUsers frmList = new frmListUsers();
             frmList.ShowDialog();
         }
+
+        private void logeOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

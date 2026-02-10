@@ -107,6 +107,7 @@ namespace DVLD.Users
                 lblTitle.Text = "Update User";
                 lblUserID.Text = User.UserID.ToString();
                 _Mode = enMode.Update;
+                ucPersonCardWithFilter1.FilterEnabled = false;
                 MessageBox.Show("Data Saved Successfully.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else

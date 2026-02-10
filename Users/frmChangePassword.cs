@@ -14,11 +14,11 @@ namespace DVLD.Users
     public partial class frmChangePassword : Form
     {
       private int _UserId;
+        clsUsers User;
         public frmChangePassword(int UserID)
         {
             InitializeComponent();
             _UserId = UserID;
-            ucUserDetails1.LoadUserInfo(UserID);
         }
         private void txtConfirmPassword_Validating(object sender, CancelEventArgs e)
         {
@@ -54,7 +54,18 @@ namespace DVLD.Users
 
         private void txtCurrentPassword_Validating(object sender, CancelEventArgs e)
         {
-            if (txtCurrentPassword.Text.Trim() != ucUserDetails1.clsUsersInfo.Password.Trim())
+
+            if (string.IsNullOrEmpty(txtCurrentPassword.Text.Trim()))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(txtCurrentPassword, "Password cannot be blank");
+            }
+            else
+            {
+                errorProvider1.SetError(txtCurrentPassword, null);
+            }
+
+            if (txtCurrentPassword.Text.Trim() != User.Password.Trim())
             {
                 e.Cancel = true;
                 errorProvider1.SetError(txtConfirmPassword, "Password Current does not match Password!");
@@ -64,7 +75,6 @@ namespace DVLD.Users
                 errorProvider1.SetError(txtConfirmPassword, null);
             }
         }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (!this.ValidateChildren())
@@ -74,13 +84,35 @@ namespace DVLD.Users
                 return;
             }
 
-            if (clsUsers.ChangePassword(_UserId, txtNewPassword.Text.Trim()))
+            User.Password = txtNewPassword.Text;
+
+            if (User.Save())
             {
-                MessageBox.Show("Data Saved Successfully.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Password Change Successfully.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                _ResetDefualtValues();
             }
             else
-                MessageBox.Show("Error: Data Is not Saved Successfully.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error: Password Is not Change Successfully.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+        }
+        private void _ResetDefualtValues()
+        {
+            txtConfirmPassword.Text = "";
+            txtCurrentPassword.Text = "";
+            txtNewPassword.Text = "";
+            txtCurrentPassword.Focus();
+        }
+        private void frmChangePassword_Load(object sender, EventArgs e)
+        {
+            _ResetDefualtValues();
+
+            User = clsUsers.FindByUserID(_UserId);
+            if (User==null)
+            {
+                this.Close();
+                return;
+            }
+            ucUserDetails1.LoadUserInfo(_UserId);
         }
 
     }
