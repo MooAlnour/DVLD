@@ -1,4 +1,6 @@
 ﻿using DVLD.Business;
+using DVLD.People;
+using DVLD.Tests.TestTypes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,11 +35,18 @@ namespace DVLD.Applications
                 dgvManageTest.Columns[1].Width = 120;
 
                 dgvManageTest.Columns[2].HeaderText = "Description";
-                dgvManageTest.Columns[2].Width = 390;
+                dgvManageTest.Columns[2].Width = 400;
 
                 dgvManageTest.Columns[3].HeaderText = "Fees";
                 dgvManageTest.Columns[3].Width = 120;
             }
+        }
+
+        private void editTestTypesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEditTestTypes editTestTypes = new frmEditTestTypes((clsManageTestType.enTestType)dgvManageTest.CurrentRow.Cells[0].Value);
+            editTestTypes.ShowDialog();
+            frmManageTestType_Load(null, null);
         }
     }
 }

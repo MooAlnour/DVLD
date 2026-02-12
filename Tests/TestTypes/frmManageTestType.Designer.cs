@@ -32,11 +32,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvManageTest = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editTestTypesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnClose = new System.Windows.Forms.Button();
             this.lblRecords = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.editTestTypesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvManageTest)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -79,6 +79,23 @@
             this.dgvManageTest.Size = new System.Drawing.Size(1072, 325);
             this.dgvManageTest.TabIndex = 2;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editTestTypesToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(212, 36);
+            // 
+            // editTestTypesToolStripMenuItem
+            // 
+            this.editTestTypesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editTestTypesToolStripMenuItem.Image = global::DVLD.Properties.Resources.edit_321;
+            this.editTestTypesToolStripMenuItem.Name = "editTestTypesToolStripMenuItem";
+            this.editTestTypesToolStripMenuItem.Size = new System.Drawing.Size(211, 32);
+            this.editTestTypesToolStripMenuItem.Text = "Edit Test Types";
+            this.editTestTypesToolStripMenuItem.Click += new System.EventHandler(this.editTestTypesToolStripMenuItem_Click);
+            // 
             // btnClose
             // 
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
@@ -113,22 +130,6 @@
             this.label2.Size = new System.Drawing.Size(116, 25);
             this.label2.TabIndex = 108;
             this.label2.Text = "# Records:";
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editTestTypesToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(202, 36);
-            // 
-            // editTestTypesToolStripMenuItem
-            // 
-            this.editTestTypesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editTestTypesToolStripMenuItem.Image = global::DVLD.Properties.Resources.edit_321;
-            this.editTestTypesToolStripMenuItem.Name = "editTestTypesToolStripMenuItem";
-            this.editTestTypesToolStripMenuItem.Size = new System.Drawing.Size(201, 32);
-            this.editTestTypesToolStripMenuItem.Text = "EditTestTypes";
             // 
             // frmManageTestType
             // 

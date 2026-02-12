@@ -89,7 +89,7 @@ namespace DVLD.Applications.Application_Types
                 errorProvider1.SetError(txtFees, null);
             }
 
-            if (clsValidatoin.IsNumber(txtFees.Text))
+            if (!clsValidatoin.IsNumber(txtFees.Text))
             {
                 e.Cancel = true;
                 errorProvider1.SetError(txtFees, "Fees Cant be Empty");

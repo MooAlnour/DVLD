@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label4 = new System.Windows.Forms.Label();
             this.lblTestTypesID = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,9 +43,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -95,6 +98,7 @@
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(310, 22);
             this.txtTitle.TabIndex = 124;
+            this.txtTitle.Validating += new System.ComponentModel.CancelEventHandler(this.txtTitle_Validating);
             // 
             // label3
             // 
@@ -112,6 +116,7 @@
             this.txtFees.Name = "txtFees";
             this.txtFees.Size = new System.Drawing.Size(310, 22);
             this.txtFees.TabIndex = 127;
+            this.txtFees.Validating += new System.ComponentModel.CancelEventHandler(this.txtFees_Validating);
             // 
             // label2
             // 
@@ -136,6 +141,7 @@
             this.btnClose.TabIndex = 130;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnSave
             // 
@@ -150,6 +156,7 @@
             this.btnSave.TabIndex = 129;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // pictureBox3
             // 
@@ -178,6 +185,7 @@
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(310, 86);
             this.txtDescription.TabIndex = 132;
+            this.txtDescription.Validating += new System.ComponentModel.CancelEventHandler(this.txtDescription_Validating);
             // 
             // pictureBox1
             // 
@@ -188,6 +196,10 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 133;
             this.pictureBox1.TabStop = false;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmEditTestTypes
             // 
@@ -211,9 +223,11 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmEditTestTypes";
             this.Text = "frmEditTestTypes";
+            this.Load += new System.EventHandler(this.frmEditTestTypes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,5 +249,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
