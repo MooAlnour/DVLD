@@ -116,13 +116,14 @@
             this.ucPersonDetails1.Size = new System.Drawing.Size(830, 264);
             this.ucPersonDetails1.TabIndex = 0;
             // 
-            // UserControl1
+            // ucUserDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.ucPersonDetails1);
-            this.Name = "UserControl1";
+            this.Name = "ucUserDetails";
             this.Size = new System.Drawing.Size(847, 359);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

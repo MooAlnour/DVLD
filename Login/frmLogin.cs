@@ -22,7 +22,6 @@ namespace DVLD
         {
             this.Close();
         }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
             clsUsers user = clsUsers.FindByUserNameAndPassword(txtUserName.Text.Trim(), txtPassword.Text.Trim());

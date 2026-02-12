@@ -1,4 +1,5 @@
-﻿using DVLD.Globel_Class;
+﻿using DVLD.Applications;
+using DVLD.Globel_Class;
 using DVLD.People;
 using DVLD.Users;
 using System;
@@ -57,6 +58,18 @@ namespace DVLD
         {
             frmChangePassword frmChangePassword = new frmChangePassword(clsGlobal.CurrentUser.UserID);
             frmChangePassword.ShowDialog();
+        }
+
+        private void manageApplicationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmManageApplication frmManage = new frmManageApplication();
+            frmManage.ShowDialog();
+        }
+
+        private void manageTestTypesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmManageTestType testType = new frmManageTestType();
+            testType.ShowDialog();
         }
     }
 }
