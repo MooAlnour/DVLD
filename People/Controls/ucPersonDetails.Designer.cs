@@ -104,7 +104,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Size = new System.Drawing.Size(831, 272);
+            this.groupBox1.Size = new System.Drawing.Size(861, 272);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Person Information";
@@ -390,6 +390,7 @@
             this.label2.Size = new System.Drawing.Size(131, 25);
             this.label2.TabIndex = 115;
             this.label2.Text = "National No:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -423,7 +424,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.groupBox1);
             this.Name = "ucPersonDetails";
-            this.Size = new System.Drawing.Size(837, 277);
+            this.Size = new System.Drawing.Size(869, 277);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
