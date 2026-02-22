@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace DVLD.Applications.Local_Driving_License_Application
 {
@@ -52,6 +53,55 @@ namespace DVLD.Applications.Local_Driving_License_Application
                 dgvLocalDrivingLicense.Columns[6].HeaderText = "Status";
                 dgvLocalDrivingLicense.Columns[6].Width = 100;
             }
+        }
+
+        private void txtFilterValue_TextChanged(object sender, EventArgs e)
+        {
+            string FilterColumn = "";
+            //Map Selected Filter to real Column name 
+            switch (cbFilterBy.Text)
+            {
+
+                case "L.D.L.AppID":
+                    FilterColumn = "LocalDrivingLicenseApplicationID";
+                    break;
+
+                case "Notional No":
+                    FilterColumn = "NationalNo";
+                    break;
+
+                case "Full Name":
+                    FilterColumn = "FullName";
+                    break;
+
+                case "Status":
+                    FilterColumn = "Status";
+                    break;
+
+                default:
+                    FilterColumn = "None";
+                    break;
+
+            }
+
+            if (txtFilterValue.Text.Trim() == "" || FilterColumn == "None")
+            {
+                _dtLocalDrivingLicense.DefaultView.RowFilter = "";
+                lblRecordsCount.Text = dgvLocalDrivingLicense.Rows.Count.ToString();
+            }
+            if (FilterColumn == "LocalDrivingLicenseApplicationID")
+
+                _dtLocalDrivingLicense.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterColumn, txtFilterValue.Text.Trim());
+            else
+                _dtLocalDrivingLicense.DefaultView.RowFilter = string.Format("[{0}] LIKE '{1}%'", FilterColumn, txtFilterValue.Text.Trim());
+
+            lblRecordsCount.Text = dgvLocalDrivingLicense.Rows.Count.ToString();
+        }
+
+        private void btnAddNewLocalDrivingLicenseApplication_Click(object sender, EventArgs e)
+        {
+            frmNewLocalDrivingLicenseApplication frmNewLocal = new frmNewLocalDrivingLicenseApplication();
+            frmNewLocal.ShowDialog();
         }
     }
 }

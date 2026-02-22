@@ -88,6 +88,7 @@
             this.txtFilterValue.Name = "txtFilterValue";
             this.txtFilterValue.Size = new System.Drawing.Size(256, 22);
             this.txtFilterValue.TabIndex = 121;
+            this.txtFilterValue.TextChanged += new System.EventHandler(this.txtFilterValue_TextChanged);
             // 
             // label1
             // 
@@ -145,6 +146,7 @@
             this.btnAddNewLocalDrivingLicenseApplication.Size = new System.Drawing.Size(88, 55);
             this.btnAddNewLocalDrivingLicenseApplication.TabIndex = 125;
             this.btnAddNewLocalDrivingLicenseApplication.UseVisualStyleBackColor = true;
+            this.btnAddNewLocalDrivingLicenseApplication.Click += new System.EventHandler(this.btnAddNewLocalDrivingLicenseApplication_Click);
             // 
             // frmLocalDrivingLicenseApplication
             // 
