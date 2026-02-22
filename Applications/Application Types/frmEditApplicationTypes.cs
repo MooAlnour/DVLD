@@ -49,7 +49,7 @@ namespace DVLD.Applications.Application_Types
             }
 
 
-            clsApplication.ApplicationFees = decimal.Parse( txtFees.Text.ToString());
+            clsApplication.ApplicationFees = float.Parse( txtFees.Text.ToString());
             clsApplication.ApplicationTypeTitle = txtTitle.Text.ToString();
             if (clsApplication.Save())
             {
