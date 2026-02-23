@@ -139,15 +139,15 @@ namespace DVLD.People.Controls
 
         private void txtFilterValue_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrEmpty(txtFilterValue.Text.Trim()))
-            {
-                e.Cancel = true;
-                errorProvider1.SetError(txtFilterValue, "This field is required!");
-            }
-            else
-            {
-                errorProvider1.SetError(txtFilterValue, null);
-            }
+            //if (string.IsNullOrEmpty(txtFilterValue.Text.Trim()))
+            //{
+            //    e.Cancel = true;
+            //    errorProvider1.SetError(txtFilterValue, "This field is required!");
+            //}
+            //else
+            //{
+            //    errorProvider1.SetError(txtFilterValue, null);
+            //}
         }
 
         private void txtFilterValue_KeyPress(object sender, KeyPressEventArgs e)

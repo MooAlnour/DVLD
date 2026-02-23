@@ -19,9 +19,12 @@ namespace DVLD.Applications.Local_Driving_License_Application
         {
             InitializeComponent();
         }
-
-        
-
+        private void _Reset()
+        {
+            dgvLocalDrivingLicense.DataSource = _dtLocalDrivingLicense;
+            cbFilterBy.SelectedIndex = 0;
+            lblRecordsCount.Text = dgvLocalDrivingLicense.Rows.Count.ToString();
+        }
         private void frmLocalDrivingLicenseApplication_Load(object sender, EventArgs e)
         {
             dgvLocalDrivingLicense.DataSource = _dtLocalDrivingLicense;
@@ -54,7 +57,6 @@ namespace DVLD.Applications.Local_Driving_License_Application
                 dgvLocalDrivingLicense.Columns[6].Width = 100;
             }
         }
-
         private void txtFilterValue_TextChanged(object sender, EventArgs e)
         {
             string FilterColumn = "";

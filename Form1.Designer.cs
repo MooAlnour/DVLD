@@ -56,6 +56,7 @@
             this.changeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.logeOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.driverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,6 +66,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.applicationsToolStripMenuItem,
             this.peopleToolStripMenuItem,
+            this.driverToolStripMenuItem,
             this.usersToolStripMenuItem,
             this.accountSettingToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -83,10 +85,10 @@
             this.detainLicensesToolStripMenuItem,
             this.manageApplicationToolStripMenuItem,
             this.manageTestTypesToolStripMenuItem});
-            this.applicationsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.applicationsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.applicationsToolStripMenuItem.Image = global::DVLD.Properties.Resources.Applications;
             this.applicationsToolStripMenuItem.Name = "applicationsToolStripMenuItem";
-            this.applicationsToolStripMenuItem.Size = new System.Drawing.Size(220, 68);
+            this.applicationsToolStripMenuItem.Size = new System.Drawing.Size(227, 68);
             this.applicationsToolStripMenuItem.Text = "Applications";
             // 
             // drivToolStripMenuItem
@@ -238,19 +240,19 @@
             // 
             // peopleToolStripMenuItem
             // 
-            this.peopleToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.peopleToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.peopleToolStripMenuItem.Image = global::DVLD.Properties.Resources.People_400;
             this.peopleToolStripMenuItem.Name = "peopleToolStripMenuItem";
-            this.peopleToolStripMenuItem.Size = new System.Drawing.Size(221, 68);
+            this.peopleToolStripMenuItem.Size = new System.Drawing.Size(164, 68);
             this.peopleToolStripMenuItem.Text = "People";
             this.peopleToolStripMenuItem.Click += new System.EventHandler(this.peopleToolStripMenuItem_Click);
             // 
             // usersToolStripMenuItem
             // 
-            this.usersToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usersToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usersToolStripMenuItem.Image = global::DVLD.Properties.Resources.Users_2_400;
             this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            this.usersToolStripMenuItem.Size = new System.Drawing.Size(148, 68);
+            this.usersToolStripMenuItem.Size = new System.Drawing.Size(150, 68);
             this.usersToolStripMenuItem.Text = "Users";
             this.usersToolStripMenuItem.Click += new System.EventHandler(this.usersToolStripMenuItem_Click);
             // 
@@ -261,10 +263,10 @@
             this.changeToolStripMenuItem,
             this.toolStripSeparator1,
             this.logeOutToolStripMenuItem});
-            this.accountSettingToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accountSettingToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accountSettingToolStripMenuItem.Image = global::DVLD.Properties.Resources.account_settings_64;
             this.accountSettingToolStripMenuItem.Name = "accountSettingToolStripMenuItem";
-            this.accountSettingToolStripMenuItem.Size = new System.Drawing.Size(255, 68);
+            this.accountSettingToolStripMenuItem.Size = new System.Drawing.Size(265, 68);
             this.accountSettingToolStripMenuItem.Text = "Account Setting";
             // 
             // currentAccountToolStripMenuItem
@@ -301,6 +303,15 @@
             this.logeOutToolStripMenuItem.Size = new System.Drawing.Size(244, 38);
             this.logeOutToolStripMenuItem.Text = "sign Out";
             this.logeOutToolStripMenuItem.Click += new System.EventHandler(this.logeOutToolStripMenuItem_Click);
+            // 
+            // driverToolStripMenuItem
+            // 
+            this.driverToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.driverToolStripMenuItem.Image = global::DVLD.Properties.Resources.Drivers_64;
+            this.driverToolStripMenuItem.Name = "driverToolStripMenuItem";
+            this.driverToolStripMenuItem.Size = new System.Drawing.Size(149, 68);
+            this.driverToolStripMenuItem.Text = "Driver";
+            this.driverToolStripMenuItem.Click += new System.EventHandler(this.driverToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -356,6 +367,7 @@
         private System.Windows.Forms.ToolStripMenuItem detainLicenseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem releaseDetainedLicenseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem internationalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem driverToolStripMenuItem;
     }
 }
 

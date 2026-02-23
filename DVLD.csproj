@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Applications\Application Types\frmDriver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Applications\Application Types\frmDriver.Designer.cs">
+      <DependentUpon>frmDriver.cs</DependentUpon>
+    </Compile>
     <Compile Include="Applications\Application Types\frmEditApplicationTypes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     <Compile Include="Users\ucUserDetails.Designer.cs">
       <DependentUpon>ucUserDetails.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Applications\Application Types\frmDriver.resx">
+      <DependentUpon>frmDriver.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Applications\Application Types\frmEditApplicationTypes.resx">
       <DependentUpon>frmEditApplicationTypes.cs</DependentUpon>
     </EmbeddedResource>
@@ -410,6 +419,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\New Application 641.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Driver Main1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Drivers 641.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

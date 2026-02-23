@@ -1,5 +1,6 @@
 ﻿using DVLD.Business;
 using DVLD.Globel_Class;
+using DVLD.People.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -68,7 +69,7 @@ namespace DVLD.Applications.Local_Driving_License_Application
                 lblTitel.Text = "Update Local Driving License Application";
                 this.Text = "Update Local Driving License Application";
                 tpApplicationInfo.Enabled = true;
-                btnSave.Enabled = true;
+                button1.Enabled = true;
             }
         }
         private   void _LoadData()
@@ -107,12 +108,43 @@ namespace DVLD.Applications.Local_Driving_License_Application
             ucPersonCardWithFilter1.FilterFocus();
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (_Mode == enMode.Update)
+            {
+                button1.Enabled = true;
+                tpApplicationInfo.Enabled = true;
+                ucPersonCardWithFilter1.FilterEnabled = false;
+                tabControl1.SelectedTab = tabControl1.TabPages["tpApplicationInfo"];
+                return;
+            }
+
+
+            //incase of add new mode.
+            if (ucPersonCardWithFilter1.PersonID != -1)
+            {
+
+                button1.Enabled = true;
+                tpApplicationInfo.Enabled = true;
+                ucPersonCardWithFilter1.FilterEnabled = false;
+                tabControl1.SelectedTab = tabControl1.TabPages["tpApplicationInfo"];
+            }
+
+            else
+
+            {
+                MessageBox.Show("Please Select a Person", "Select a Person", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ucPersonCardWithFilter1.FilterFocus();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
         {
             int LicenseClassID = clsLicenseClasses.Find(cbLicenseClass.Text).LicenseClassID;
 
-            int ActiveApplicationID = clsApplications.GetActiveApplicationIDForLicenseClass(ucPersonCardWithFilter1.PersonID,clsApplications.enApplicationType.NewDrivingLicense, LicenseClassID);
-            
+            int ActiveApplicationID = clsApplications.GetActiveApplicationIDForLicenseClass(ucPersonCardWithFilter1.PersonID, clsApplications.enApplicationType.NewDrivingLicense, LicenseClassID);
+
             if (ActiveApplicationID != -1)
             {
                 MessageBox.Show("Choose another License Class, the selected Person Already have an active application for the selected class with id=" + ActiveApplicationID, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -134,44 +166,12 @@ namespace DVLD.Applications.Local_Driving_License_Application
                 lblDLApplicationID.Text = _localDrivingApplication.LocalDrivingLicenseApplicationID.ToString();
                 lblTitel.Text = "";
                 _Mode = enMode.Update;
-                MessageBox.Show("Data Saved Successfully.","Saved");
+                MessageBox.Show("Data Saved Successfully.", "Saved");
 
             }
             else
                 MessageBox.Show("Error: Data Is not Saved Successfully.");
 
-
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (_Mode == enMode.Update)
-            {
-                btnSave.Enabled = true;
-                tpApplicationInfo.Enabled = true;
-                tabControl1.SelectedTab = tabControl1.TabPages["tpApplicationInfo"];
-                return;
-            }
-
-
-            //incase of add new mode.
-            if (ucPersonCardWithFilter1.PersonID != -1)
-            {
-
-                btnSave.Enabled = true;
-                tpApplicationInfo.Enabled = true;
-                tabControl1.SelectedTab = tabControl1.TabPages["tpApplicationInfo"];
-
-
-            }
-
-            else
-
-            {
-                MessageBox.Show("Please Select a Person", "Select a Person", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                ucPersonCardWithFilter1.FilterFocus();
-            }
         }
     }
 }

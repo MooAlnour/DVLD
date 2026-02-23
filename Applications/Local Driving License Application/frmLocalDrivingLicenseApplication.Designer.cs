@@ -61,7 +61,7 @@
             this.dgvLocalDrivingLicense.ReadOnly = true;
             this.dgvLocalDrivingLicense.RowHeadersWidth = 51;
             this.dgvLocalDrivingLicense.RowTemplate.Height = 24;
-            this.dgvLocalDrivingLicense.Size = new System.Drawing.Size(1420, 431);
+            this.dgvLocalDrivingLicense.Size = new System.Drawing.Size(1400, 431);
             this.dgvLocalDrivingLicense.TabIndex = 119;
             // 
             // cbFilterBy
@@ -128,7 +128,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Image = global::DVLD.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(1298, 654);
+            this.btnClose.Location = new System.Drawing.Point(1278, 654);
             this.btnClose.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(134, 36);
@@ -140,7 +140,7 @@
             // 
             this.btnAddNewLocalDrivingLicenseApplication.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddNewLocalDrivingLicenseApplication.Image = global::DVLD.Properties.Resources.New_Application_64;
-            this.btnAddNewLocalDrivingLicenseApplication.Location = new System.Drawing.Point(1344, 152);
+            this.btnAddNewLocalDrivingLicenseApplication.Location = new System.Drawing.Point(1324, 153);
             this.btnAddNewLocalDrivingLicenseApplication.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnAddNewLocalDrivingLicenseApplication.Name = "btnAddNewLocalDrivingLicenseApplication";
             this.btnAddNewLocalDrivingLicenseApplication.Size = new System.Drawing.Size(88, 55);
@@ -152,7 +152,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1444, 703);
+            this.ClientSize = new System.Drawing.Size(1417, 703);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnAddNewLocalDrivingLicenseApplication);
             this.Controls.Add(this.label2);
@@ -162,6 +162,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvLocalDrivingLicense);
             this.Controls.Add(this.lblTitel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmLocalDrivingLicenseApplication";
             this.Text = "Local Driving License Application";
             this.Load += new System.EventHandler(this.frmLocalDrivingLicenseApplication_Load);
