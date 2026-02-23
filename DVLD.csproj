@@ -77,6 +77,12 @@
     <Compile Include="Applications\Local Driving License Application\frmNewLocalDrivingLicenseApplication.Designer.cs">
       <DependentUpon>frmNewLocalDrivingLicenseApplication.cs</DependentUpon>
     </Compile>
+    <Compile Include="Applications\Local Driving License Application\ucLocalDrivingApplicationInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Applications\Local Driving License Application\ucLocalDrivingApplicationInfo.Designer.cs">
+      <DependentUpon>ucLocalDrivingApplicationInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tests\TestTypes\frmEditTestTypes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\Local Driving License Application\frmNewLocalDrivingLicenseApplication.resx">
       <DependentUpon>frmNewLocalDrivingLicenseApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\Local Driving License Application\ucLocalDrivingApplicationInfo.resx">
+      <DependentUpon>ucLocalDrivingApplicationInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tests\TestTypes\frmEditTestTypes.resx">
       <DependentUpon>frmEditTestTypes.cs</DependentUpon>

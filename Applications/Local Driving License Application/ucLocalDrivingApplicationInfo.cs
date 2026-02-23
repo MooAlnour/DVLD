@@ -16,5 +16,10 @@ namespace DVLD.Applications.Local_Driving_License_Application
         {
             InitializeComponent();
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

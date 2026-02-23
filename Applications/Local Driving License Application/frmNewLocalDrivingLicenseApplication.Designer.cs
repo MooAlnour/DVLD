@@ -31,7 +31,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpPersonInfo = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
-            this.ucPersonCardWithFilter1 = new DVLD.People.Controls.ucPersonCardWithFilter();
             this.tpApplicationInfo = new System.Windows.Forms.TabPage();
             this.cbLicenseClass = new System.Windows.Forms.ComboBox();
             this.lblDLApplicationID = new System.Windows.Forms.Label();
@@ -46,6 +45,7 @@
             this.lblTitel = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.ucPersonCardWithFilter1 = new DVLD.People.Controls.ucPersonCardWithFilter();
             this.tabControl1.SuspendLayout();
             this.tpPersonInfo.SuspendLayout();
             this.tpApplicationInfo.SuspendLayout();
@@ -85,17 +85,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // ucPersonCardWithFilter1
-            // 
-            this.ucPersonCardWithFilter1.BackColor = System.Drawing.Color.White;
-            this.ucPersonCardWithFilter1.FilterEnabled = true;
-            this.ucPersonCardWithFilter1.Location = new System.Drawing.Point(3, 24);
-            this.ucPersonCardWithFilter1.Name = "ucPersonCardWithFilter1";
-            this.ucPersonCardWithFilter1.ShowAddPerson = true;
-            this.ucPersonCardWithFilter1.Size = new System.Drawing.Size(969, 366);
-            this.ucPersonCardWithFilter1.TabIndex = 0;
-            this.ucPersonCardWithFilter1.OnPersonSelected += new System.Action<int>(this.ucPersonCardWithFilter1_OnPersonSelected);
-            // 
             // tpApplicationInfo
             // 
             this.tpApplicationInfo.Controls.Add(this.cbLicenseClass);
@@ -118,7 +107,7 @@
             // 
             // cbLicenseClass
             // 
-            this.cbLicenseClass.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.cbLicenseClass.BackColor = System.Drawing.Color.White;
             this.cbLicenseClass.FormattingEnabled = true;
             this.cbLicenseClass.Items.AddRange(new object[] {
             "Class 1 - Small Motorcycle",
@@ -262,10 +251,22 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // ucPersonCardWithFilter1
+            // 
+            this.ucPersonCardWithFilter1.BackColor = System.Drawing.Color.White;
+            this.ucPersonCardWithFilter1.FilterEnabled = true;
+            this.ucPersonCardWithFilter1.Location = new System.Drawing.Point(3, 24);
+            this.ucPersonCardWithFilter1.Name = "ucPersonCardWithFilter1";
+            this.ucPersonCardWithFilter1.ShowAddPerson = true;
+            this.ucPersonCardWithFilter1.Size = new System.Drawing.Size(969, 366);
+            this.ucPersonCardWithFilter1.TabIndex = 0;
+            this.ucPersonCardWithFilter1.OnPersonSelected += new System.Action<int>(this.ucPersonCardWithFilter1_OnPersonSelected);
+            // 
             // frmNewLocalDrivingLicenseApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1023, 629);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.lblTitel);
