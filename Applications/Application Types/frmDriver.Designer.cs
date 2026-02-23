@@ -69,10 +69,11 @@
             this.cbFilterBy.FormattingEnabled = true;
             this.cbFilterBy.Items.AddRange(new object[] {
             "None",
-            "L.D.L.AppID",
+            "Drive ID",
+            "Person ID",
             "Notional No",
             "Full Name",
-            "Status"});
+            "Active Licenses"});
             this.cbFilterBy.Location = new System.Drawing.Point(121, 131);
             this.cbFilterBy.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cbFilterBy.Name = "cbFilterBy";
