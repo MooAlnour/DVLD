@@ -219,6 +219,7 @@ namespace DVLD.People
             {
                 _dtPeople.DefaultView.RowFilter = "";
                 lblRecordsCount.Text = dgvPeople.Rows.Count.ToString();
+                return;
             }
             if (FilterColumn == "PersonID")
                 //in this case we deal with integer not string.

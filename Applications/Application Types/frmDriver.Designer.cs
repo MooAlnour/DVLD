@@ -29,39 +29,39 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvDriverLicenses = new System.Windows.Forms.DataGridView();
             this.cbFilterBy = new System.Windows.Forms.ComboBox();
             this.txtFilterValue = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.lblRecordsCount = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDriverLicenses)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(568, 9);
+            this.label1.Location = new System.Drawing.Point(468, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(297, 52);
+            this.label1.Size = new System.Drawing.Size(292, 51);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mange Driver";
             // 
-            // dataGridView1
+            // dgvDriverLicenses
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 161);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1388, 378);
-            this.dataGridView1.TabIndex = 2;
+            this.dgvDriverLicenses.AllowUserToAddRows = false;
+            this.dgvDriverLicenses.AllowUserToDeleteRows = false;
+            this.dgvDriverLicenses.BackgroundColor = System.Drawing.Color.White;
+            this.dgvDriverLicenses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDriverLicenses.Location = new System.Drawing.Point(12, 161);
+            this.dgvDriverLicenses.Name = "dgvDriverLicenses";
+            this.dgvDriverLicenses.ReadOnly = true;
+            this.dgvDriverLicenses.RowHeadersWidth = 51;
+            this.dgvDriverLicenses.RowTemplate.Height = 24;
+            this.dgvDriverLicenses.Size = new System.Drawing.Size(1309, 378);
+            this.dgvDriverLicenses.TabIndex = 2;
             // 
             // cbFilterBy
             // 
@@ -69,7 +69,7 @@
             this.cbFilterBy.FormattingEnabled = true;
             this.cbFilterBy.Items.AddRange(new object[] {
             "None",
-            "Drive ID",
+            "Driver ID",
             "Person ID",
             "Notional No",
             "Full Name",
@@ -88,6 +88,7 @@
             this.txtFilterValue.Name = "txtFilterValue";
             this.txtFilterValue.Size = new System.Drawing.Size(256, 22);
             this.txtFilterValue.TabIndex = 124;
+            this.txtFilterValue.TextChanged += new System.EventHandler(this.txtFilterValue_TextChanged);
             // 
             // label3
             // 
@@ -106,7 +107,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Image = global::DVLD.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(1266, 553);
+            this.btnClose.Location = new System.Drawing.Point(1187, 552);
             this.btnClose.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(134, 36);
@@ -140,18 +141,20 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1427, 597);
+            this.ClientSize = new System.Drawing.Size(1340, 597);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblRecordsCount);
             this.Controls.Add(this.cbFilterBy);
             this.Controls.Add(this.txtFilterValue);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvDriverLicenses);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmDriver";
-            this.Text = "frmDriver";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Text = "List Driver";
+            this.Load += new System.EventHandler(this.frmDriver_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDriverLicenses)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -160,7 +163,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvDriverLicenses;
         private System.Windows.Forms.ComboBox cbFilterBy;
         private System.Windows.Forms.TextBox txtFilterValue;
         private System.Windows.Forms.Label label3;
