@@ -105,5 +105,15 @@ namespace DVLD.Applications.Local_Driving_License_Application
             frmNewLocalDrivingLicenseApplication frmNewLocal = new frmNewLocalDrivingLicenseApplication();
             frmNewLocal.ShowDialog();
         }
+
+        private void phoneCallToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void schduleVisionTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
