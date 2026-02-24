@@ -103,10 +103,10 @@ namespace DVLD.Applications.Local_Driving_License_Application
             PersonSelected = obj;
         }
 
-        private void frmNewLocalDrivingLicenseApplication_Activated(object sender, EventArgs e)
-        {
-            ucPersonCardWithFilter1.FilterFocus();
-        }
+        //private void frmNewLocalDrivingLicenseApplication_Activated(object sender, EventArgs e)
+        //{
+        //    ucPersonCardWithFilter1.FilterFocus();
+        //}
 
 
         private void button1_Click(object sender, EventArgs e)
@@ -115,14 +115,14 @@ namespace DVLD.Applications.Local_Driving_License_Application
             {
                 button1.Enabled = true;
                 tpApplicationInfo.Enabled = true;
-                ucPersonCardWithFilter1.FilterEnabled = false;
+                ucPersonCardWithFilter1.FilterEnabled = true;
                 tabControl1.SelectedTab = tabControl1.TabPages["tpApplicationInfo"];
                 return;
             }
 
 
             //incase of add new mode.
-            if (ucPersonCardWithFilter1.PersonID != -1)
+            if (ucPersonCardWithFilter1.PersonID != 0)
             {
 
                 button1.Enabled = true;

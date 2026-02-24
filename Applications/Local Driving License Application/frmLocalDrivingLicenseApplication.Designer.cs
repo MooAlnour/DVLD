@@ -104,7 +104,7 @@
             this.toolStripSeparator6,
             this.showPersonLicenseHistoryToolStripMenuItem});
             this.cmsLocalDriving.Name = "contextMenuStrip1";
-            this.cmsLocalDriving.Size = new System.Drawing.Size(309, 372);
+            this.cmsLocalDriving.Size = new System.Drawing.Size(309, 344);
             // 
             // showDetailsToolStripMenuItem
             // 
@@ -127,6 +127,7 @@
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(308, 38);
             this.editToolStripMenuItem.Text = "&Edit Application";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
@@ -149,6 +150,7 @@
             this.sendEmailToolStripMenuItem.Name = "sendEmailToolStripMenuItem";
             this.sendEmailToolStripMenuItem.Size = new System.Drawing.Size(308, 38);
             this.sendEmailToolStripMenuItem.Text = "Cancel Application";
+            this.sendEmailToolStripMenuItem.Click += new System.EventHandler(this.sendEmailToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
@@ -243,6 +245,7 @@
             this.cbFilterBy.Name = "cbFilterBy";
             this.cbFilterBy.Size = new System.Drawing.Size(210, 24);
             this.cbFilterBy.TabIndex = 122;
+            this.cbFilterBy.SelectedIndexChanged += new System.EventHandler(this.cbFilterBy_SelectedIndexChanged);
             // 
             // txtFilterValue
             // 

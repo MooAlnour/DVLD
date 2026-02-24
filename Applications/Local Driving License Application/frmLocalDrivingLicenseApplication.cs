@@ -14,7 +14,7 @@ namespace DVLD.Applications.Local_Driving_License_Application
 {
     public partial class frmLocalDrivingLicenseApplication: Form
     {
-        private DataTable _dtLocalDrivingLicense = clsLocalDrivingApplication.GetAllLocalDrivingApplications();
+        private DataTable _dtLocalDrivingLicense ;
         public frmLocalDrivingLicenseApplication()
         {
             InitializeComponent();
@@ -27,8 +27,10 @@ namespace DVLD.Applications.Local_Driving_License_Application
         }
         private void frmLocalDrivingLicenseApplication_Load(object sender, EventArgs e)
         {
+            _dtLocalDrivingLicense = clsLocalDrivingApplication.GetAllLocalDrivingApplications();
             dgvLocalDrivingLicense.DataSource = _dtLocalDrivingLicense;
             cbFilterBy.SelectedIndex = 0;
+            
             lblRecordsCount.Text = dgvLocalDrivingLicense.Rows.Count.ToString();
             if (dgvLocalDrivingLicense.Rows.Count > 0)
             {
@@ -59,6 +61,11 @@ namespace DVLD.Applications.Local_Driving_License_Application
         }
         private void txtFilterValue_TextChanged(object sender, EventArgs e)
         {
+            if (cbFilterBy.Text == "None")
+            {
+                txtFilterValue.Visible = false;
+            }
+
             string FilterColumn = "";
             //Map Selected Filter to real Column name 
             switch (cbFilterBy.Text)
@@ -104,6 +111,7 @@ namespace DVLD.Applications.Local_Driving_License_Application
         {
             frmNewLocalDrivingLicenseApplication frmNewLocal = new frmNewLocalDrivingLicenseApplication();
             frmNewLocal.ShowDialog();
+            _Reset();
         }
 
         private void phoneCallToolStripMenuItem_Click(object sender, EventArgs e)
@@ -139,12 +147,46 @@ namespace DVLD.Applications.Local_Driving_License_Application
                 if (localDrivingApplication.Delete())
                 {
                     MessageBox.Show("Application Deleted Successfully.", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    frmLocalDrivingLicenseApplication_Load(null,null);
                 }
 
                 else
                     MessageBox.Show("Could not delete applicatoin, other data depends on it.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                frmLocalDrivingLicenseApplication_Load(null, null);
+            }
+        }
 
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int ID = (int)dgvLocalDrivingLicense.CurrentRow.Cells[0].Value;
+            frmNewLocalDrivingLicenseApplication localDrivingLicenseApplication = new frmNewLocalDrivingLicenseApplication(ID);
+            localDrivingLicenseApplication.ShowDialog();
+            _Reset();
+        }
+
+        private void sendEmailToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int ID = (int)dgvLocalDrivingLicense.CurrentRow.Cells[0].Value;
+            clsLocalDrivingApplication localDrivingApplication =
+                   clsLocalDrivingApplication.FindByLocalDrivingApplicationID(ID);
+            if (localDrivingApplication.Cancel())
+            {
+                MessageBox.Show("Application Cancel Successfully.", "Cancel", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            else
+                MessageBox.Show("Could not Cancel applicatoin, other data depends on it.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            frmLocalDrivingLicenseApplication_Load(null, null);
+
+        }
+
+        private void cbFilterBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtFilterValue.Visible = (cbFilterBy.Text != "None");
+            if (txtFilterValue.Visible)
+            {
+                txtFilterValue.Text = "";
+                txtFilterValue.Focus();
             }
         }
     }
