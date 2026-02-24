@@ -115,5 +115,14 @@ namespace DVLD.Applications.Local_Driving_License_Application
         {
 
         }
+
+        private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            int ID = (int)dgvLocalDrivingLicense.CurrentRow.Cells[0].Value;
+              
+            Form12 form = new Form12(ID);
+            form.ShowDialog();
+        }
     }
 }
