@@ -35,12 +35,14 @@
             this.lblLicenseClass = new System.Windows.Forms.Label();
             this.lbl1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.llkShowLicenseInfo = new System.Windows.Forms.LinkLabel();
             this.ucApplicationInfo1 = new DVLD.Applications.ucApplicationInfo();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.llkShowLicenseInfo);
             this.groupBox1.Controls.Add(this.lblPassedTest);
             this.groupBox1.Controls.Add(this.lblDLApplicationID);
             this.groupBox1.Controls.Add(this.lblApplicationDate);
@@ -116,6 +118,17 @@
             this.label2.TabIndex = 9;
             this.label2.Text = "D.L.App ID:";
             // 
+            // llkShowLicenseInfo
+            // 
+            this.llkShowLicenseInfo.AutoSize = true;
+            this.llkShowLicenseInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.llkShowLicenseInfo.Location = new System.Drawing.Point(56, 109);
+            this.llkShowLicenseInfo.Name = "llkShowLicenseInfo";
+            this.llkShowLicenseInfo.Size = new System.Drawing.Size(172, 25);
+            this.llkShowLicenseInfo.TabIndex = 19;
+            this.llkShowLicenseInfo.TabStop = true;
+            this.llkShowLicenseInfo.Text = "Show License Info";
+            // 
             // ucApplicationInfo1
             // 
             this.ucApplicationInfo1.Location = new System.Drawing.Point(3, 195);
@@ -130,7 +143,7 @@
             this.Controls.Add(this.ucApplicationInfo1);
             this.Controls.Add(this.groupBox1);
             this.Name = "ucLocalDrivingApplicationInfo";
-            this.Size = new System.Drawing.Size(932, 445);
+            this.Size = new System.Drawing.Size(920, 445);
             this.Load += new System.EventHandler(this.ucLocalDrivingApplicationInfo_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -148,5 +161,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblPassedTest;
         private ucApplicationInfo ucApplicationInfo1;
+        private System.Windows.Forms.LinkLabel llkShowLicenseInfo;
     }
 }

@@ -124,5 +124,28 @@ namespace DVLD.Applications.Local_Driving_License_Application
             Form12 form = new Form12(ID);
             form.ShowDialog();
         }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to delete Person [" + dgvLocalDrivingLicense.CurrentRow.Cells[0].Value + "]", "Confirm Delete", MessageBoxButtons.OKCancel) == DialogResult.OK)
+
+            {
+
+                int LocalDrivingApplicationID = (int)dgvLocalDrivingLicense.CurrentRow.Cells[0].Value;
+                clsLocalDrivingApplication localDrivingApplication = 
+                    clsLocalDrivingApplication.FindByLocalDrivingApplicationID(LocalDrivingApplicationID);
+
+                //Perform Delele and refresh
+                if (localDrivingApplication.Delete())
+                {
+                    MessageBox.Show("Application Deleted Successfully.", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    frmLocalDrivingLicenseApplication_Load(null,null);
+                }
+
+                else
+                    MessageBox.Show("Could not delete applicatoin, other data depends on it.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        }
     }
 }
