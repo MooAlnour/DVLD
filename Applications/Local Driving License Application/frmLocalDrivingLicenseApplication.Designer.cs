@@ -104,7 +104,8 @@
             this.toolStripSeparator6,
             this.showPersonLicenseHistoryToolStripMenuItem});
             this.cmsLocalDriving.Name = "contextMenuStrip1";
-            this.cmsLocalDriving.Size = new System.Drawing.Size(309, 344);
+            this.cmsLocalDriving.Size = new System.Drawing.Size(309, 372);
+            this.cmsLocalDriving.Opening += new System.ComponentModel.CancelEventHandler(this.cmsLocalDriving_Opening);
             // 
             // showDetailsToolStripMenuItem
             // 
@@ -167,7 +168,7 @@
             this.phoneCallToolStripMenuItem.Name = "phoneCallToolStripMenuItem";
             this.phoneCallToolStripMenuItem.Size = new System.Drawing.Size(308, 38);
             this.phoneCallToolStripMenuItem.Text = "Sechdule Test";
-            this.phoneCallToolStripMenuItem.Click += new System.EventHandler(this.phoneCallToolStripMenuItem_Click);
+            this.phoneCallToolStripMenuItem.Click += new System.EventHandler(this.schduleCallToolStripMenuItem_Click);
             // 
             // schduleVisionTestToolStripMenuItem
             // 

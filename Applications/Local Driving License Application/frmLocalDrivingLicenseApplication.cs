@@ -114,11 +114,6 @@ namespace DVLD.Applications.Local_Driving_License_Application
             _Reset();
         }
 
-        private void phoneCallToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void schduleVisionTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -188,6 +183,30 @@ namespace DVLD.Applications.Local_Driving_License_Application
                 txtFilterValue.Text = "";
                 txtFilterValue.Focus();
             }
+        }
+
+        private void cmsLocalDriving_Opening(object sender, CancelEventArgs e)
+        {
+            int LocalDrivingApplicationID = (int)dgvLocalDrivingLicense.CurrentRow.Cells[0].Value;
+            clsLocalDrivingApplication localDrivingApplication =
+                clsLocalDrivingApplication.FindByLocalDrivingApplicationID(LocalDrivingApplicationID);
+            int TotalPassTests = (int)dgvLocalDrivingLicense.CurrentRow.Cells[5].Value;
+            bool LicenseExists = localDrivingApplication.IsLicenseIssued();
+
+            issueDrivingLicenseFristTimeToolStripMenuItem.Enabled = !LicenseExists && (TotalPassTests == 3);
+            showLicenseToolStripMenuItem.Enabled = LicenseExists;
+
+            editToolStripMenuItem.Enabled = !LicenseExists&&(localDrivingApplication.ApplicationStatus==clsApplications.enApplicationStatus.New);
+            phoneCallToolStripMenuItem.Enabled = !LicenseExists;
+            
+            deleteToolStripMenuItem.Enabled=  (localDrivingApplication.ApplicationStatus == clsApplications.enApplicationStatus.New);
+            sendEmailToolStripMenuItem.Enabled =  (localDrivingApplication.ApplicationStatus == clsApplications.enApplicationStatus.New);
+            
+        }
+
+        private void schduleCallToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
