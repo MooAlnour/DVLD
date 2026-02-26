@@ -96,6 +96,24 @@
     <Compile Include="Applications\ucApplicationInfo.Designer.cs">
       <DependentUpon>ucApplicationInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tests\Control\ucScheduleTest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tests\Control\ucScheduleTest.Designer.cs">
+      <DependentUpon>ucScheduleTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\TestAppointment\frmVidionTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tests\TestAppointment\frmVidionTest.Designer.cs">
+      <DependentUpon>frmVidionTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\TestAppointment\frmVisionTestAppointments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tests\TestAppointment\frmVisionTestAppointments.Designer.cs">
+      <DependentUpon>frmVisionTestAppointments.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tests\TestTypes\frmEditTestTypes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,6 +232,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\ucApplicationInfo.resx">
       <DependentUpon>ucApplicationInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tests\Control\ucScheduleTest.resx">
+      <DependentUpon>ucScheduleTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tests\TestAppointment\frmVidionTest.resx">
+      <DependentUpon>frmVidionTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tests\TestAppointment\frmVisionTestAppointments.resx">
+      <DependentUpon>frmVisionTestAppointments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tests\TestTypes\frmEditTestTypes.resx">
       <DependentUpon>frmEditTestTypes.cs</DependentUpon>
@@ -477,6 +504,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Street Test 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddAppointment 32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

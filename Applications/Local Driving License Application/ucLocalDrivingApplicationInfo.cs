@@ -55,6 +55,7 @@ namespace DVLD.Applications.Local_Driving_License_Application
             
             lblDLApplicationID.Text = _LocalDrivingApplication.LocalDrivingLicenseApplicationID.ToString();
             lblApplicationDate.Text = _LocalDrivingApplication.ApplicationDate.ToString("dd/MM/yyyy");
+            lblPassedTest.Text = _LocalDrivingApplication.GetPassedTestCount().ToString() + "/3";
             ucApplicationInfo1.LoadAplicationInfoByAppID(_LocalDrivingApplication.ApplicationID);
             //Aplication Basic Info
             

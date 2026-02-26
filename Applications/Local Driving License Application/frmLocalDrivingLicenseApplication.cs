@@ -1,4 +1,5 @@
 ﻿using DVLD.Business;
+using DVLD.Tests.TestAppointment;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -116,7 +117,8 @@ namespace DVLD.Applications.Local_Driving_License_Application
 
         private void schduleVisionTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmVisionTestAppointments frmVisionTest = new frmVisionTestAppointments((int)dgvLocalDrivingLicense.CurrentRow.Cells[0].Value);
+            frmVisionTest.ShowDialog();
         }
 
         private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -201,7 +203,22 @@ namespace DVLD.Applications.Local_Driving_License_Application
             
             deleteToolStripMenuItem.Enabled=  (localDrivingApplication.ApplicationStatus == clsApplications.enApplicationStatus.New);
             sendEmailToolStripMenuItem.Enabled =  (localDrivingApplication.ApplicationStatus == clsApplications.enApplicationStatus.New);
-            
+
+            bool IsPassVisionTest = localDrivingApplication.DoesPassTestType(clsManageTestType.enTestType.VisionTest);
+            bool IsPassWrittenTest = localDrivingApplication.DoesPassTestType(clsManageTestType.enTestType.WrittenTest);
+            bool ISPassStreetTest = localDrivingApplication.DoesPassTestType(clsManageTestType.enTestType.StreetTest);
+
+            phoneCallToolStripMenuItem.Enabled = (!IsPassVisionTest || !IsPassWrittenTest || !ISPassStreetTest)&& (localDrivingApplication.ApplicationStatus == clsApplications.enApplicationStatus.New);
+
+            if (phoneCallToolStripMenuItem.Enabled)
+            {
+                schduleVisionTestToolStripMenuItem.Enabled = !IsPassVisionTest;
+
+                schduleWrittenTestToolStripMenuItem.Enabled = IsPassVisionTest && !IsPassWrittenTest;
+
+                schduleStreetTestToolStripMenuItem.Enabled = IsPassVisionTest && IsPassWrittenTest && !ISPassStreetTest;
+            }
+
         }
 
         private void schduleCallToolStripMenuItem_Click(object sender, EventArgs e)
