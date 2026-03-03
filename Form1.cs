@@ -92,5 +92,11 @@ namespace DVLD
             driver.ShowDialog();
             
         }
+
+        private void testToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 form = new Form2();
+            form.ShowDialog();
+        }
     }
 }

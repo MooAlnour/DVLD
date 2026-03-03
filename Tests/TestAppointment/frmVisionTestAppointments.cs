@@ -32,5 +32,11 @@ namespace DVLD.Tests.TestAppointment
             ucLocalDrivingApplicationInfo1.LoadApplicationInfoByLocalDrivingAppID(_LocalDrivingApplicationID);
             lblRecordsCount.Text = dgvAppointments.Rows.Count.ToString();
         }
+
+        private void btnAddAppointment_Click(object sender, EventArgs e)
+        {
+            frmVisionTest visionTest = new frmVisionTest(_LocalDrivingApplicationID);
+            visionTest.ShowDialog();
+        }
     }
 }

@@ -120,6 +120,7 @@
             this.btnAddAppointment.Size = new System.Drawing.Size(53, 44);
             this.btnAddAppointment.TabIndex = 4;
             this.btnAddAppointment.UseVisualStyleBackColor = true;
+            this.btnAddAppointment.Click += new System.EventHandler(this.btnAddAppointment_Click);
             // 
             // frmVisionTestAppointments
             // 

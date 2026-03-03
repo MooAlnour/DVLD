@@ -12,9 +12,17 @@ namespace DVLD.Tests.TestAppointment
 {
     public partial class frmVisionTest: Form
     {
-        public frmVisionTest()
+         private int _LocalDrivingApplicationID = -1;
+        
+        public frmVisionTest(int localDAppID)
         {
             InitializeComponent();
+            _LocalDrivingApplicationID = localDAppID;
+        }
+
+        private void frmVisionTest_Load(object sender, EventArgs e)
+        {
+            ucScheduleTest1.LoadInfo(_LocalDrivingApplicationID,-1);
         }
     }
 }
