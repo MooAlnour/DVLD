@@ -102,23 +102,41 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="License\frmIssueDriverLicenseForFirstTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="License\frmIssueDriverLicenseForFirstTime.Designer.cs">
+      <DependentUpon>frmIssueDriverLicenseForFirstTime.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tests\Control\ucScheduleTest.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Tests\Control\ucScheduleTest.Designer.cs">
       <DependentUpon>ucScheduleTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tests\TestAppointment\frmVidionTest.cs">
+    <Compile Include="Tests\Control\ucScheduleTestTake.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tests\Control\ucScheduleTestTake.Designer.cs">
+      <DependentUpon>ucScheduleTestTake.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\frmTakeTest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tests\TestAppointment\frmVidionTest.Designer.cs">
-      <DependentUpon>frmVidionTest.cs</DependentUpon>
+    <Compile Include="Tests\frmTakeTest.Designer.cs">
+      <DependentUpon>frmTakeTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tests\TestAppointment\frmVisionTestAppointments.cs">
+    <Compile Include="Tests\TestAppointment\frmScheduleTest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tests\TestAppointment\frmVisionTestAppointments.Designer.cs">
-      <DependentUpon>frmVisionTestAppointments.cs</DependentUpon>
+    <Compile Include="Tests\TestAppointment\frmScheduleTest.Designer.cs">
+      <DependentUpon>frmScheduleTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\TestAppointment\frmListTestAppointments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tests\TestAppointment\frmListTestAppointments.Designer.cs">
+      <DependentUpon>frmListTestAppointments.cs</DependentUpon>
     </Compile>
     <Compile Include="Tests\TestTypes\frmEditTestTypes.cs">
       <SubType>Form</SubType>
@@ -242,14 +260,23 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="License\frmIssueDriverLicenseForFirstTime.resx">
+      <DependentUpon>frmIssueDriverLicenseForFirstTime.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tests\Control\ucScheduleTest.resx">
       <DependentUpon>ucScheduleTest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tests\TestAppointment\frmVidionTest.resx">
-      <DependentUpon>frmVidionTest.cs</DependentUpon>
+    <EmbeddedResource Include="Tests\Control\ucScheduleTestTake.resx">
+      <DependentUpon>ucScheduleTestTake.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tests\TestAppointment\frmVisionTestAppointments.resx">
-      <DependentUpon>frmVisionTestAppointments.cs</DependentUpon>
+    <EmbeddedResource Include="Tests\frmTakeTest.resx">
+      <DependentUpon>frmTakeTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tests\TestAppointment\frmScheduleTest.resx">
+      <DependentUpon>frmScheduleTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tests\TestAppointment\frmListTestAppointments.resx">
+      <DependentUpon>frmListTestAppointments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tests\TestTypes\frmEditTestTypes.resx">
       <DependentUpon>frmEditTestTypes.cs</DependentUpon>

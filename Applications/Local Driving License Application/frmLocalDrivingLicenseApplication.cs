@@ -1,4 +1,5 @@
 ﻿using DVLD.Business;
+using DVLD.License;
 using DVLD.Tests.TestAppointment;
 using System;
 using System.Collections.Generic;
@@ -19,12 +20,6 @@ namespace DVLD.Applications.Local_Driving_License_Application
         public frmLocalDrivingLicenseApplication()
         {
             InitializeComponent();
-        }
-        private void _Reset()
-        {
-            dgvLocalDrivingLicense.DataSource = _dtLocalDrivingLicense;
-            cbFilterBy.SelectedIndex = 0;
-            lblRecordsCount.Text = dgvLocalDrivingLicense.Rows.Count.ToString();
         }
         private void frmLocalDrivingLicenseApplication_Load(object sender, EventArgs e)
         {
@@ -112,13 +107,15 @@ namespace DVLD.Applications.Local_Driving_License_Application
         {
             frmNewLocalDrivingLicenseApplication frmNewLocal = new frmNewLocalDrivingLicenseApplication();
             frmNewLocal.ShowDialog();
-            _Reset();
+            frmLocalDrivingLicenseApplication_Load(null, null);
         }
 
         private void schduleVisionTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmVisionTestAppointments frmVisionTest = new frmVisionTestAppointments((int)dgvLocalDrivingLicense.CurrentRow.Cells[0].Value);
+            frmListTestAppointments frmVisionTest = new frmListTestAppointments((int)dgvLocalDrivingLicense.CurrentRow.Cells[0].Value,clsManageTestType.enTestType.VisionTest);
             frmVisionTest.ShowDialog();
+            frmLocalDrivingLicenseApplication_Load(null, null);
+
         }
 
         private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -157,7 +154,7 @@ namespace DVLD.Applications.Local_Driving_License_Application
             int ID = (int)dgvLocalDrivingLicense.CurrentRow.Cells[0].Value;
             frmNewLocalDrivingLicenseApplication localDrivingLicenseApplication = new frmNewLocalDrivingLicenseApplication(ID);
             localDrivingLicenseApplication.ShowDialog();
-            _Reset();
+            frmLocalDrivingLicenseApplication_Load(null, null);
         }
 
         private void sendEmailToolStripMenuItem_Click(object sender, EventArgs e)
@@ -223,6 +220,30 @@ namespace DVLD.Applications.Local_Driving_License_Application
 
         private void schduleCallToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void schduleWrittenTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListTestAppointments frmVisionTest = new frmListTestAppointments((int)dgvLocalDrivingLicense.CurrentRow.Cells[0].Value, clsManageTestType.enTestType.WrittenTest);
+            frmVisionTest.ShowDialog();
+            frmLocalDrivingLicenseApplication_Load(null, null);
+
+        }
+
+        private void schduleStreetTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListTestAppointments frmVisionTest = new frmListTestAppointments((int)dgvLocalDrivingLicense.CurrentRow.Cells[0].Value, clsManageTestType.enTestType.StreetTest);
+            frmVisionTest.ShowDialog();
+            frmLocalDrivingLicenseApplication_Load(null, null);
+
+        }
+
+        private void issueDrivingLicenseFristTimeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmIssueDriverLicenseForFirstTime driverLicenseForFirstTime = new frmIssueDriverLicenseForFirstTime((int)dgvLocalDrivingLicense.CurrentRow.Cells[0].Value);
+            driverLicenseForFirstTime.ShowDialog();
+            frmLocalDrivingLicenseApplication_Load(null, null);
 
         }
     }

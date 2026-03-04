@@ -38,17 +38,18 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Image = global::DVLD.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(510, 691);
+            this.btnClose.Location = new System.Drawing.Point(234, 681);
             this.btnClose.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(134, 36);
             this.btnClose.TabIndex = 127;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // ucScheduleTest1
             // 
-            this.ucScheduleTest1.Location = new System.Drawing.Point(12, 22);
+            this.ucScheduleTest1.Location = new System.Drawing.Point(23, 12);
             this.ucScheduleTest1.Name = "ucScheduleTest1";
             this.ucScheduleTest1.Size = new System.Drawing.Size(632, 663);
             this.ucScheduleTest1.TabIndex = 128;

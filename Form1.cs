@@ -93,10 +93,10 @@ namespace DVLD
             
         }
 
-        private void testToolStripMenuItem_Click(object sender, EventArgs e)
+        private void retakeTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form2 form = new Form2();
-            form.ShowDialog();
+            frmLocalDrivingLicenseApplication frmLocalDriving = new frmLocalDrivingLicenseApplication();
+            frmLocalDriving.ShowDialog();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace DVLD.Tests.TestAppointment
 {
-    partial class frmVisionTestAppointments
+    partial class frmListTestAppointments
     {
         /// <summary>
         /// Required designer variable.
@@ -28,26 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
+            this.lblTitel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvAppointments = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.teakTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label3 = new System.Windows.Forms.Label();
             this.lblRecordsCount = new System.Windows.Forms.Label();
-            this.ucLocalDrivingApplicationInfo1 = new DVLD.Applications.Local_Driving_License_Application.ucLocalDrivingApplicationInfo();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnAddAppointment = new System.Windows.Forms.Button();
+            this.ucLocalDrivingApplicationInfo1 = new DVLD.Applications.Local_Driving_License_Application.ucLocalDrivingApplicationInfo();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // lblTitel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(186, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(512, 51);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Vision Test Appointments";
+            this.lblTitel.AutoSize = true;
+            this.lblTitel.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitel.Location = new System.Drawing.Point(186, 9);
+            this.lblTitel.Name = "lblTitel";
+            this.lblTitel.Size = new System.Drawing.Size(512, 51);
+            this.lblTitel.TabIndex = 0;
+            this.lblTitel.Text = "Vision Test Appointments";
             // 
             // label2
             // 
@@ -61,14 +66,42 @@
             // 
             // dgvAppointments
             // 
+            this.dgvAppointments.AllowUserToAddRows = false;
+            this.dgvAppointments.AllowUserToDeleteRows = false;
             this.dgvAppointments.BackgroundColor = System.Drawing.Color.White;
             this.dgvAppointments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAppointments.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvAppointments.Location = new System.Drawing.Point(21, 586);
             this.dgvAppointments.Name = "dgvAppointments";
+            this.dgvAppointments.ReadOnly = true;
             this.dgvAppointments.RowHeadersWidth = 51;
             this.dgvAppointments.RowTemplate.Height = 24;
             this.dgvAppointments.Size = new System.Drawing.Size(911, 150);
             this.dgvAppointments.TabIndex = 3;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editToolStripMenuItem,
+            this.teakTestToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 92);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
+            // 
+            // teakTestToolStripMenuItem
+            // 
+            this.teakTestToolStripMenuItem.Name = "teakTestToolStripMenuItem";
+            this.teakTestToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+            this.teakTestToolStripMenuItem.Text = "Teak Test";
+            this.teakTestToolStripMenuItem.Click += new System.EventHandler(this.teakTestToolStripMenuItem_Click);
             // 
             // label3
             // 
@@ -91,13 +124,6 @@
             this.lblRecordsCount.TabIndex = 100;
             this.lblRecordsCount.Text = "??";
             // 
-            // ucLocalDrivingApplicationInfo1
-            // 
-            this.ucLocalDrivingApplicationInfo1.Location = new System.Drawing.Point(12, 85);
-            this.ucLocalDrivingApplicationInfo1.Name = "ucLocalDrivingApplicationInfo1";
-            this.ucLocalDrivingApplicationInfo1.Size = new System.Drawing.Size(920, 445);
-            this.ucLocalDrivingApplicationInfo1.TabIndex = 1;
-            // 
             // btnClose
             // 
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
@@ -111,6 +137,7 @@
             this.btnClose.TabIndex = 102;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnAddAppointment
             // 
@@ -122,7 +149,14 @@
             this.btnAddAppointment.UseVisualStyleBackColor = true;
             this.btnAddAppointment.Click += new System.EventHandler(this.btnAddAppointment_Click);
             // 
-            // frmVisionTestAppointments
+            // ucLocalDrivingApplicationInfo1
+            // 
+            this.ucLocalDrivingApplicationInfo1.Location = new System.Drawing.Point(12, 85);
+            this.ucLocalDrivingApplicationInfo1.Name = "ucLocalDrivingApplicationInfo1";
+            this.ucLocalDrivingApplicationInfo1.Size = new System.Drawing.Size(920, 445);
+            this.ucLocalDrivingApplicationInfo1.TabIndex = 1;
+            // 
+            // frmListTestAppointments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -135,12 +169,13 @@
             this.Controls.Add(this.dgvAppointments);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ucLocalDrivingApplicationInfo1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTitel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "frmVisionTestAppointments";
+            this.Name = "frmListTestAppointments";
             this.Text = "Vision Test Appointments";
             this.Load += new System.EventHandler(this.frmVisionTestAppointments_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,7 +183,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTitel;
         private Applications.Local_Driving_License_Application.ucLocalDrivingApplicationInfo ucLocalDrivingApplicationInfo1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvAppointments;
@@ -156,5 +191,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblRecordsCount;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem teakTestToolStripMenuItem;
     }
 }
