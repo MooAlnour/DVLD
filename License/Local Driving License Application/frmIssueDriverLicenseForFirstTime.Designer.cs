@@ -30,10 +30,9 @@
         {
             this.ucLocalDrivingApplicationInfo1 = new DVLD.Applications.Local_Driving_License_Application.ucLocalDrivingApplicationInfo();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnIssue = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.txtNote = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // ucLocalDrivingApplicationInfo1
@@ -53,20 +52,6 @@
             this.label1.Size = new System.Drawing.Size(69, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Notes:";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(132, 510);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(784, 150);
-            this.dataGridView1.TabIndex = 2;
             // 
             // btnClose
             // 
@@ -88,6 +73,15 @@
             this.btnIssue.TabIndex = 4;
             this.btnIssue.Text = "Issue";
             this.btnIssue.UseVisualStyleBackColor = true;
+            this.btnIssue.Click += new System.EventHandler(this.btnIssue_Click);
+            // 
+            // txtNote
+            // 
+            this.txtNote.Location = new System.Drawing.Point(134, 476);
+            this.txtNote.Multiline = true;
+            this.txtNote.Name = "txtNote";
+            this.txtNote.Size = new System.Drawing.Size(782, 194);
+            this.txtNote.TabIndex = 5;
             // 
             // frmIssueDriverLicenseForFirstTime
             // 
@@ -95,16 +89,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(928, 746);
+            this.Controls.Add(this.txtNote);
             this.Controls.Add(this.btnIssue);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ucLocalDrivingApplicationInfo1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmIssueDriverLicenseForFirstTime";
             this.Text = "Issue Driver License For First Time";
             this.Load += new System.EventHandler(this.frmIssueDriverLicenseForFirstTime_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -114,8 +107,8 @@
 
         private Applications.Local_Driving_License_Application.ucLocalDrivingApplicationInfo ucLocalDrivingApplicationInfo1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnIssue;
+        private System.Windows.Forms.TextBox txtNote;
     }
 }
