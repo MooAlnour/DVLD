@@ -1,6 +1,7 @@
 ﻿using DVLD.Applications;
 using DVLD.Applications.Application_Types;
 using DVLD.Applications.Local_Driving_License_Application;
+using DVLD.Applications.Renew_License_Application;
 using DVLD.Globel_Class;
 using DVLD.People;
 using DVLD.Users;
@@ -97,6 +98,18 @@ namespace DVLD
         {
             frmLocalDrivingLicenseApplication frmLocalDriving = new frmLocalDrivingLicenseApplication();
             frmLocalDriving.ShowDialog();
+        }
+
+        private void testToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 form = new Form2();
+            form.ShowDialog();
+        }
+
+        private void renewDrivingLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRenewLicenseApplication frmRenew = new frmRenewLicenseApplication();
+            frmRenew.Show();
         }
     }
 }

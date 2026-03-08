@@ -38,16 +38,16 @@ namespace DVLD.License.Control
         }
 
         private void LoadPersonImage(){
-                if (_License.DriverInfo.PersonInfo.Gendor == 0)
-                    pbPicure.Image = Resources.Man_32;
-                else
-                    pbPicure.Image = Resources.Woman_32;
-
+            if (_License.DriverInfo.PersonInfo.Gendor == 0)
+                pbPicure.Image = Resources.Male_512;
+            else
+                pbPicure.Image = Resources.Female_512;
 
             string ImagePath = _License.DriverInfo.PersonInfo.ImagePath;
+
             if (ImagePath != "")
                 if (File.Exists(ImagePath))
-                    pbPicure.ImageLocation = ImagePath;
+                    pbPicure.Load(ImagePath);
                 else
                     MessageBox.Show("Could not find this image: = " + ImagePath, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
@@ -75,6 +75,11 @@ namespace DVLD.License.Control
             lblDateOfBirth.Text = _License.DriverInfo.PersonInfo.DateOfBirth.ToString("dd/MMM/yyyy");
             lblIssueReason.Text = _License.IssueReasonText;
             LoadPersonImage();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
