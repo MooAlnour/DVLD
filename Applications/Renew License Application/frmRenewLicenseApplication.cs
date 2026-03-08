@@ -89,8 +89,7 @@ namespace DVLD.Applications.Renew_License_Application
             btnSave.Enabled = false;
             ucDriverLicenseInfoWithFilter1.FilterEnabled = false;
             llShowNewLicenseInfo.Enabled = true;
-            MessageBox.Show("Step 1");
-            MessageBox.Show("Step 2");
+            
         }
 
         private void llShowNewLicenseInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
