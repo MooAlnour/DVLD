@@ -78,6 +78,12 @@
     <Compile Include="Applications\Replacement Licenses Application\frmReplacementDamagedorLostLicenses.Designer.cs">
       <DependentUpon>frmReplacementDamagedorLostLicenses.cs</DependentUpon>
     </Compile>
+    <Compile Include="Driver\frmShowPersonHistorylicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Driver\frmShowPersonHistorylicense.Designer.cs">
+      <DependentUpon>frmShowPersonHistorylicense.cs</DependentUpon>
+    </Compile>
     <Compile Include="License\Control\frmLicensesHistory.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -283,6 +289,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\Replacement Licenses Application\frmReplacementDamagedorLostLicenses.resx">
       <DependentUpon>frmReplacementDamagedorLostLicenses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Driver\frmShowPersonHistorylicense.resx">
+      <DependentUpon>frmShowPersonHistorylicense.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="License\Control\frmLicensesHistory.resx">
       <DependentUpon>frmLicensesHistory.cs</DependentUpon>

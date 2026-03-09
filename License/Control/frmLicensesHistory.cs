@@ -31,22 +31,22 @@ namespace DVLD.Driver
             if (dgvLocal.Rows.Count>0)
             {
                 dgvLocal.Columns[0].HeaderText = "Lic.ID";
-                dgvLocal.Columns[0].Width = 110;
+                dgvLocal.Columns[0].Width = 100;
 
                 dgvLocal.Columns[1].HeaderText = "App.ID";
-                dgvLocal.Columns[1].Width = 110;
+                dgvLocal.Columns[1].Width = 100;
 
                 dgvLocal.Columns[2].HeaderText = "Class Name";
-                dgvLocal.Columns[2].Width = 270;
+                dgvLocal.Columns[2].Width = 260;
 
                 dgvLocal.Columns[3].HeaderText = "Issue Date";
-                dgvLocal.Columns[3].Width = 170;
+                dgvLocal.Columns[3].Width = 130;
 
                 dgvLocal.Columns[4].HeaderText = "Expiration Date";
-                dgvLocal.Columns[4].Width = 170;
+                dgvLocal.Columns[4].Width = 130;
 
                 dgvLocal.Columns[5].HeaderText = "Is Active";
-                dgvLocal.Columns[5].Width = 110;
+                dgvLocal.Columns[5].Width = 90;
 
             }
         }
@@ -59,22 +59,22 @@ namespace DVLD.Driver
             if (dgvInternational.Rows.Count > 0)
             {
                 dgvInternational.Columns[0].HeaderText = "Lic.ID";
-                dgvInternational.Columns[0].Width = 110;
+                dgvInternational.Columns[0].Width = 100;
 
                 dgvInternational.Columns[1].HeaderText = "App.ID";
-                dgvInternational.Columns[1].Width = 110;
+                dgvInternational.Columns[1].Width = 100;
 
                 dgvInternational.Columns[2].HeaderText = "Class Name";
-                dgvInternational.Columns[2].Width = 270;
+                dgvInternational.Columns[2].Width = 260;
 
                 dgvInternational.Columns[3].HeaderText = "Issue Date";
-                dgvInternational.Columns[3].Width = 170;
+                dgvInternational.Columns[3].Width = 130;
 
                 dgvInternational.Columns[4].HeaderText = "Expiration Date";
-                dgvInternational.Columns[4].Width = 170;
+                dgvInternational.Columns[4].Width = 130;
 
                 dgvInternational.Columns[5].HeaderText = "Is Active";
-                dgvInternational.Columns[5].Width = 110;
+                dgvInternational.Columns[5].Width = 90;
 
             }
         }
@@ -96,13 +96,14 @@ namespace DVLD.Driver
         public void LoadInfoByPersonID(int PersonID)
         {
             Driver = clsDriverLicenses.FindByPersonID(PersonID);
-            _DriverID = Driver.DriverID;
-
             if (Driver == null)
             {
                 MessageBox.Show("There Is Driver With This ID :" + _DriverID.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            _DriverID = Driver.DriverID;
+
+            
             _LoadLocalLicenseInfo();
             _LoadInternaionalLicenseInfo();
         }
@@ -112,6 +113,7 @@ namespace DVLD.Driver
             _dtDriverInternationalLicenseHistory.Clear();
             _dtDriverLocalLicenseHistory.Clear();
         }
+
         private void ucLicensesHistory_Load(object sender, EventArgs e)
         {
 

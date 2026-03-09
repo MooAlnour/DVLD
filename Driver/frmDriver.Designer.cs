@@ -31,15 +31,15 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvDriverLicenses = new System.Windows.Forms.DataGridView();
-            this.cbFilterBy = new System.Windows.Forms.ComboBox();
-            this.txtFilterValue = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblRecordsCount = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showPersonInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showHistoryLicensePersonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cbFilterBy = new System.Windows.Forms.ComboBox();
+            this.txtFilterValue = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblRecordsCount = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDriverLicenses)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -68,6 +68,31 @@
             this.dgvDriverLicenses.RowTemplate.Height = 24;
             this.dgvDriverLicenses.Size = new System.Drawing.Size(1309, 378);
             this.dgvDriverLicenses.TabIndex = 2;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showPersonInfoToolStripMenuItem,
+            this.showHistoryLicensePersonToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(329, 68);
+            // 
+            // showPersonInfoToolStripMenuItem
+            // 
+            this.showPersonInfoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showPersonInfoToolStripMenuItem.Name = "showPersonInfoToolStripMenuItem";
+            this.showPersonInfoToolStripMenuItem.Size = new System.Drawing.Size(328, 32);
+            this.showPersonInfoToolStripMenuItem.Text = "Show Person Info";
+            this.showPersonInfoToolStripMenuItem.Click += new System.EventHandler(this.showPersonInfoToolStripMenuItem_Click);
+            // 
+            // showHistoryLicensePersonToolStripMenuItem
+            // 
+            this.showHistoryLicensePersonToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showHistoryLicensePersonToolStripMenuItem.Name = "showHistoryLicensePersonToolStripMenuItem";
+            this.showHistoryLicensePersonToolStripMenuItem.Size = new System.Drawing.Size(328, 32);
+            this.showHistoryLicensePersonToolStripMenuItem.Text = "Show  Person History license";
+            this.showHistoryLicensePersonToolStripMenuItem.Click += new System.EventHandler(this.showHistoryLicensePersonToolStripMenuItem_Click);
             // 
             // cbFilterBy
             // 
@@ -108,20 +133,6 @@
             this.label3.TabIndex = 123;
             this.label3.Text = "Filter By:";
             // 
-            // btnClose
-            // 
-            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Image = global::DVLD.Properties.Resources.Close_32;
-            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(1187, 552);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(134, 36);
-            this.btnClose.TabIndex = 129;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = true;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -143,29 +154,19 @@
             this.lblRecordsCount.TabIndex = 128;
             this.lblRecordsCount.Text = "??";
             // 
-            // contextMenuStrip1
+            // btnClose
             // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.showPersonInfoToolStripMenuItem,
-            this.showHistoryLicensePersonToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(329, 96);
-            // 
-            // showPersonInfoToolStripMenuItem
-            // 
-            this.showPersonInfoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.showPersonInfoToolStripMenuItem.Name = "showPersonInfoToolStripMenuItem";
-            this.showPersonInfoToolStripMenuItem.Size = new System.Drawing.Size(328, 32);
-            this.showPersonInfoToolStripMenuItem.Text = "Show Person Info";
-            this.showPersonInfoToolStripMenuItem.Click += new System.EventHandler(this.showPersonInfoToolStripMenuItem_Click);
-            // 
-            // showHistoryLicensePersonToolStripMenuItem
-            // 
-            this.showHistoryLicensePersonToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.showHistoryLicensePersonToolStripMenuItem.Name = "showHistoryLicensePersonToolStripMenuItem";
-            this.showHistoryLicensePersonToolStripMenuItem.Size = new System.Drawing.Size(328, 32);
-            this.showHistoryLicensePersonToolStripMenuItem.Text = "Show  Person History license";
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Image = global::DVLD.Properties.Resources.Close_32;
+            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClose.Location = new System.Drawing.Point(1187, 552);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(134, 36);
+            this.btnClose.TabIndex = 129;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
             // 
             // frmDriver
             // 
@@ -199,11 +200,11 @@
         private System.Windows.Forms.ComboBox cbFilterBy;
         private System.Windows.Forms.TextBox txtFilterValue;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblRecordsCount;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem showPersonInfoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem showHistoryLicensePersonToolStripMenuItem;
+        private System.Windows.Forms.Button btnClose;
     }
 }

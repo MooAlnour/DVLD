@@ -28,13 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.ucLicensesHistory1 = new DVLD.Driver.ucLicensesHistory();
             this.SuspendLayout();
+            // 
+            // ucLicensesHistory1
+            // 
+            this.ucLicensesHistory1.BackColor = System.Drawing.Color.White;
+            this.ucLicensesHistory1.Location = new System.Drawing.Point(7, 38);
+            this.ucLicensesHistory1.Name = "ucLicensesHistory1";
+            this.ucLicensesHistory1.Size = new System.Drawing.Size(1196, 337);
+            this.ucLicensesHistory1.TabIndex = 0;
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1204, 757);
+            this.Controls.Add(this.ucLicensesHistory1);
             this.Name = "Form2";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
@@ -43,5 +53,7 @@
         }
 
         #endregion
+
+        private Driver.ucLicensesHistory ucLicensesHistory1;
     }
 }
