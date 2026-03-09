@@ -1,4 +1,5 @@
 ﻿using DVLD.Business;
+using DVLD.People;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -105,6 +106,12 @@ namespace DVLD.Applications.Application_Types
                 txtFilterValue.Text = "";
                 txtFilterValue.Focus();
             }
+        }
+
+        private void showPersonInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmShowPerson showPerson = new frmShowPerson((int)dgvDriverLicenses.CurrentRow.Cells[1].Value);
+            showPerson.ShowDialog();
         }
     }
 }

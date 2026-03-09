@@ -28,31 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ucDriverLicenseInfoWithFilter1 = new DVLD.License.Control.ucDriverLicenseInfoWithFilter();
             this.SuspendLayout();
-            // 
-            // ucDriverLicenseInfoWithFilter1
-            // 
-            this.ucDriverLicenseInfoWithFilter1.BackColor = System.Drawing.Color.White;
-            this.ucDriverLicenseInfoWithFilter1.Location = new System.Drawing.Point(23, 12);
-            this.ucDriverLicenseInfoWithFilter1.Name = "ucDriverLicenseInfoWithFilter1";
-            this.ucDriverLicenseInfoWithFilter1.Size = new System.Drawing.Size(1008, 602);
-            this.ucDriverLicenseInfoWithFilter1.TabIndex = 0;
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1204, 655);
-            this.Controls.Add(this.ucDriverLicenseInfoWithFilter1);
+            this.ClientSize = new System.Drawing.Size(1204, 757);
             this.Name = "Form2";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private License.Control.ucDriverLicenseInfoWithFilter ucDriverLicenseInfoWithFilter1;
     }
 }
