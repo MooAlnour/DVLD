@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DVLD.Business;
 using DVLD.People.Controls;
 using DVLD.People;
+using DVLD.License.Local_Driving_License;
 
 namespace DVLD.Applications.Local_Driving_License_Application
 {
@@ -76,6 +77,10 @@ namespace DVLD.Applications.Local_Driving_License_Application
 
         }
 
-       
+        private void llkShowLicenseInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmShowLicenseInfo frmShow = new frmShowLicenseInfo(_LicenseID);
+            frmShow.ShowDialog();
+        }
     }
 }

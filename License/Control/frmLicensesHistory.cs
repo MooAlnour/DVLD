@@ -53,7 +53,7 @@ namespace DVLD.Driver
 
         private void _LoadInternaionalLicenseInfo()
         {
-            _dtDriverInternationalLicenseHistory = clsDriverLicenses.GetLicenses(_DriverID);
+            _dtDriverInternationalLicenseHistory = clsInternationalLicense.GetDriverInternationalLicenses(_DriverID);
             dgvInternational.DataSource = _dtDriverInternationalLicenseHistory;
             lblRecordsCountLocal.Text = dgvInternational.Rows.Count.ToString();
             if (dgvInternational.Rows.Count > 0)
@@ -64,17 +64,17 @@ namespace DVLD.Driver
                 dgvInternational.Columns[1].HeaderText = "App.ID";
                 dgvInternational.Columns[1].Width = 100;
 
-                dgvInternational.Columns[2].HeaderText = "Class Name";
-                dgvInternational.Columns[2].Width = 260;
+                dgvInternational.Columns[2].HeaderText = "Issued.LocalLicenseID";
+                dgvInternational.Columns[2].Width = 140;
 
                 dgvInternational.Columns[3].HeaderText = "Issue Date";
-                dgvInternational.Columns[3].Width = 130;
+                dgvInternational.Columns[3].Width = 150;
 
                 dgvInternational.Columns[4].HeaderText = "Expiration Date";
-                dgvInternational.Columns[4].Width = 130;
+                dgvInternational.Columns[4].Width = 150;
 
-                dgvInternational.Columns[5].HeaderText = "Is Active";
-                dgvInternational.Columns[5].Width = 90;
+                dgvInternational.Columns[5].HeaderText = "IsActive";
+                dgvInternational.Columns[5].Width = 130;
 
             }
         }

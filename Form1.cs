@@ -1,5 +1,7 @@
 ﻿using DVLD.Applications;
 using DVLD.Applications.Application_Types;
+using DVLD.Applications.Detain_License_Application;
+using DVLD.Applications.International_License_Application;
 using DVLD.Applications.Local_Driving_License_Application;
 using DVLD.Applications.Renew_License_Application;
 using DVLD.Applications.Replacement_Licenses_Application;
@@ -117,6 +119,30 @@ namespace DVLD
         {
             frmReplacementDamagedorLostLicenses frmReplacement = new frmReplacementDamagedorLostLicenses();
             frmReplacement.Show();
+        }
+
+        private void internationalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListInternationalLicense frmList = new frmListInternationalLicense();
+            frmList.ShowDialog();
+        }
+
+        private void internationLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddNewInternationalLicenseApplication frmAddNew = new frmAddNewInternationalLicenseApplication();
+            frmAddNew.Show();
+        }
+
+        private void detainLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDetainLicenseApp frmDetain = new frmDetainLicenseApp();
+            frmDetain.Show();
+        }
+
+        private void manageDetainedLicensesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListDetainLicense frmList = new frmListDetainLicense();
+            frmList.Show();
         }
     }
 }

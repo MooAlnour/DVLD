@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.llkShowLicenseInfo = new System.Windows.Forms.LinkLabel();
             this.lblPassedTest = new System.Windows.Forms.Label();
             this.lblDLApplicationID = new System.Windows.Forms.Label();
             this.lblApplicationDate = new System.Windows.Forms.Label();
             this.lblLicenseClass = new System.Windows.Forms.Label();
             this.lbl1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.llkShowLicenseInfo = new System.Windows.Forms.LinkLabel();
             this.ucApplicationInfo1 = new DVLD.Applications.ucApplicationInfo();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -56,6 +56,18 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Local Driving Application Info";
+            // 
+            // llkShowLicenseInfo
+            // 
+            this.llkShowLicenseInfo.AutoSize = true;
+            this.llkShowLicenseInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.llkShowLicenseInfo.Location = new System.Drawing.Point(56, 109);
+            this.llkShowLicenseInfo.Name = "llkShowLicenseInfo";
+            this.llkShowLicenseInfo.Size = new System.Drawing.Size(172, 25);
+            this.llkShowLicenseInfo.TabIndex = 19;
+            this.llkShowLicenseInfo.TabStop = true;
+            this.llkShowLicenseInfo.Text = "Show License Info";
+            this.llkShowLicenseInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llkShowLicenseInfo_LinkClicked);
             // 
             // lblPassedTest
             // 
@@ -117,17 +129,6 @@
             this.label2.Size = new System.Drawing.Size(113, 25);
             this.label2.TabIndex = 9;
             this.label2.Text = "D.L.App ID:";
-            // 
-            // llkShowLicenseInfo
-            // 
-            this.llkShowLicenseInfo.AutoSize = true;
-            this.llkShowLicenseInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llkShowLicenseInfo.Location = new System.Drawing.Point(56, 109);
-            this.llkShowLicenseInfo.Name = "llkShowLicenseInfo";
-            this.llkShowLicenseInfo.Size = new System.Drawing.Size(172, 25);
-            this.llkShowLicenseInfo.TabIndex = 19;
-            this.llkShowLicenseInfo.TabStop = true;
-            this.llkShowLicenseInfo.Text = "Show License Info";
             // 
             // ucApplicationInfo1
             // 
