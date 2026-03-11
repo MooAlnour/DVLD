@@ -16,7 +16,7 @@ namespace DVLD.Applications.Detain_License_Application
 {
     public partial class frmDetainLicenseApp: Form
     {
-        int DetainID = -1;
+        int _DetainID = -1;
         clsDetainedLicense detainedLicense;
         public frmDetainLicenseApp()
         {
@@ -77,6 +77,7 @@ namespace DVLD.Applications.Detain_License_Application
             }
 
             btnSave.Enabled = true;
+            txtFees.Focus();
 
         }
 
@@ -87,22 +88,16 @@ namespace DVLD.Applications.Detain_License_Application
                 return;
             }
 
-            detainedLicense = new clsDetainedLicense();
-            detainedLicense.LicenseID = ucDriverLicenseInfoWithFilter1.SelectedLicenseInfo.LicenseID;
-            detainedLicense.CreatedByUserID = clsGlobal.CurrentUser.UserID;
-            detainedLicense.DetainDate = DateTime.Now;
-            detainedLicense.FineFees = int.Parse(txtFees.Text);
-            detainedLicense.ReleaseDate = DateTime.Now;
-            detainedLicense.ReleaseApplicationID = ucDriverLicenseInfoWithFilter1.SelectedLicenseInfo.ApplicationID;
+            _DetainID = ucDriverLicenseInfoWithFilter1.SelectedLicenseInfo.Detain(float.Parse(txtFees.Text.Trim()), clsGlobal.CurrentUser.UserID);
 
-            if (!detainedLicense.Save())
+            if (_DetainID==-1)
             {
                 MessageBox.Show("Faild to Detain License", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 return;
             }
+
             lblDetainID.Text = detainedLicense.DetainID.ToString();
-            txtFees.Text = detainedLicense.FineFees.ToString();
 
             MessageBox.Show("License Detain Successufully", "Successufully", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -113,7 +108,7 @@ namespace DVLD.Applications.Detain_License_Application
 
         private void llShowNewLicenseInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmShowLicenseInfo frmShow = new frmShowLicenseInfo(DetainID);
+            frmShowLicenseInfo frmShow = new frmShowLicenseInfo(_DetainID);
             frmShow.ShowDialog();
         }
 

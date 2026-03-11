@@ -9,9 +9,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace DVLD.Applications.Detain_License_Application
 {
@@ -101,6 +103,122 @@ namespace DVLD.Applications.Detain_License_Application
             }
 
                 
+        }
+
+        private void btnRleaseLicense_Click(object sender, EventArgs e)
+        {
+            frmReleaseDetainLicense frmRelease = new frmReleaseDetainLicense();
+            frmRelease.Show();
+        }
+
+        private void rleaseLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReleaseDetainLicense frmRelease = new frmReleaseDetainLicense((int)dgvDetainLicense.CurrentRow.Cells[1].Value);
+            frmRelease.Show();
+        }
+
+        private void cbFilterBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbFilterBy.Text == "Is Released")
+            {
+                cbIsReleased.Visible = true;
+                txtFilterValue.Visible = false;
+                cbIsReleased.Focus();
+                cbIsReleased.SelectedIndex = 0;
+            }
+            else
+            {
+                txtFilterValue.Visible = (cbFilterBy.Text != "None");
+                cbIsReleased.Visible = false;
+            }
+
+            if (cbFilterBy.Text == "None")
+            {
+                cbIsReleased.Visible = false;
+            }
+            txtFilterValue.Text = "";
+            txtFilterValue.Focus();
+        }
+
+        private void cbIsReleased_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string FilterColumn = "IsReleased";
+            string FilterValue = cbIsReleased.Text;
+
+            switch (FilterValue)
+            {
+                case "All":
+                    break;
+                case "Yes":
+                    FilterValue = "1";
+                    break;
+                case "No":
+                    FilterValue = "0";
+                    break;
+            }
+
+
+            if (FilterValue == "All")
+                _dtListDetainLicense.DefaultView.RowFilter = "";
+            else
+                _dtListDetainLicense.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterColumn, FilterValue);
+
+            lblRecordsCount.Text = _dtListDetainLicense.Rows.Count.ToString();
+
+        }
+
+        private void txtFilterValue_TextChanged(object sender, EventArgs e)
+        {
+
+            if (cbFilterBy.Text == "None")
+            {
+                txtFilterValue.Visible = false;
+            }
+
+            string FilterColumn = "";
+            switch (cbFilterBy.Text)
+            {
+
+                case "D.ID" :
+                    FilterColumn = "DetainID";
+                    break;
+
+                case "License ID":
+                    FilterColumn = "LicenseID";
+                    break;
+
+                case "Full Name":
+                    FilterColumn = "FullName";
+                    break;
+
+                //case "Is Released":
+                //    FilterColumn = "IsReleased";
+                //    break;
+
+                default:
+                    FilterColumn = "None";
+                    break;
+            }
+
+            if (txtFilterValue.Text.Trim() == "" || FilterColumn == "None")
+            {
+                _dtListDetainLicense.DefaultView.RowFilter = "";
+                lblRecordsCount.Text = dgvDetainLicense.Rows.Count.ToString();
+                return;
+            }
+            if (FilterColumn == "DetainID" || FilterColumn == "LicenseID")
+
+                _dtListDetainLicense.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterColumn, txtFilterValue.Text.Trim());
+            else
+                _dtListDetainLicense.DefaultView.RowFilter = string.Format("[{0}] LIKE '{1}%'", FilterColumn, txtFilterValue.Text.Trim());
+
+            lblRecordsCount.Text = dgvDetainLicense.Rows.Count.ToString();
+
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+            rleaseLicenseToolStripMenuItem.Enabled=!(bool)dgvDetainLicense.CurrentRow.Cells[3].Value;
         }
     }
 }

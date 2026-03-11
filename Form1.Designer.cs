@@ -150,6 +150,7 @@
             this.rReleaseDetinedDrivingLicenseToolStripMenuItem.Name = "rReleaseDetinedDrivingLicenseToolStripMenuItem";
             this.rReleaseDetinedDrivingLicenseToolStripMenuItem.Size = new System.Drawing.Size(427, 30);
             this.rReleaseDetinedDrivingLicenseToolStripMenuItem.Text = "Release Detined Driving License";
+            this.rReleaseDetinedDrivingLicenseToolStripMenuItem.Click += new System.EventHandler(this.rReleaseDetinedDrivingLicenseToolStripMenuItem_Click);
             // 
             // retakeTestToolStripMenuItem
             // 
@@ -226,6 +227,7 @@
             this.releaseDetainedLicenseToolStripMenuItem.Name = "releaseDetainedLicenseToolStripMenuItem";
             this.releaseDetainedLicenseToolStripMenuItem.Size = new System.Drawing.Size(307, 30);
             this.releaseDetainedLicenseToolStripMenuItem.Text = "Release Detained License";
+            this.releaseDetainedLicenseToolStripMenuItem.Click += new System.EventHandler(this.releaseDetainedLicenseToolStripMenuItem_Click);
             // 
             // manageApplicationToolStripMenuItem
             // 

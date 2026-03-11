@@ -84,7 +84,7 @@
             // 
             this.ucDriverLicenseInfoControl1.Location = new System.Drawing.Point(9, 109);
             this.ucDriverLicenseInfoControl1.Name = "ucDriverLicenseInfoControl1";
-            this.ucDriverLicenseInfoControl1.Size = new System.Drawing.Size(996, 454);
+            this.ucDriverLicenseInfoControl1.Size = new System.Drawing.Size(996, 326);
             this.ucDriverLicenseInfoControl1.TabIndex = 0;
             // 
             // errorProvider1
@@ -99,7 +99,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.ucDriverLicenseInfoControl1);
             this.Name = "ucDriverLicenseInfoWithFilter";
-            this.Size = new System.Drawing.Size(1008, 562);
+            this.Size = new System.Drawing.Size(1008, 435);
             this.Load += new System.EventHandler(this.ucDriverLicenseInfoWithFilter_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
